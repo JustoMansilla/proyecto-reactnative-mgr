@@ -1,0 +1,12 @@
+{
+  "name": "proyecto-integrador-react",
+  "displayName": "proyecto-integrador-react",
+  "expo": {
+    "name": "proyecto-integrador-react",
+    "slug": "proyecto-integrador-react",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
