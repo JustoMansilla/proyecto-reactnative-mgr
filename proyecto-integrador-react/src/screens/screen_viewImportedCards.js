@@ -36,19 +36,19 @@ class screen_viewImportedCards extends Component {
         <Text key={item.login.uuid}
         style= {{fontSize: 20}}>{item.name.first}</Text>
         )
-    // return (
-    //     <View> 
-    //         <Text> Mostramos los valores importados</Text>
-    //         {values}
-    //         <TouchableOpacity onPress={ this.getDataStorage.bind (this)}>
-    //             <View> <Text> recuperar datos</Text></View>
-    //         </TouchableOpacity>
+     return (
+         <View> 
+             <Text> Mostramos los valores importados</Text>
+             {values}
+             <TouchableOpacity onPress={ this.getDataStorage.bind (this)}>
+                 <View> <Text> recuperar datos</Text></View>
+             </TouchableOpacity>
 
-    //         <TouchableOpacity onPress= { () => this.setState({importedUsers: []})}>
-    //             <View> <Text> Borrar datos importados</Text></View>
-    //         </TouchableOpacity>
-    //     </View>
-    // )
+             <TouchableOpacity onPress= { () => this.setState({importedUsers: []})}>
+                 <View> <Text> Borrar datos importados</Text></View>
+             </TouchableOpacity>
+         </View>
+     )
    }
 }
 export {screen_viewImportedCards}
