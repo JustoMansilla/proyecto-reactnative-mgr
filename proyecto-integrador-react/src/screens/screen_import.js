@@ -26,7 +26,7 @@ componentDidMount() {
 })
 }
 
-async storeData(){
+async storeData(){ //antes de hacer stringify de state.users
 try {
     const jsonUsers = JSON.stringify(this.state.users);
     await AsyncStorage.setItem("Users", jsonUsers);
@@ -35,6 +35,8 @@ try {
     console.log(error);
         }
     }
+
+//pasar values a flatslist
 
 render(){
     const values = this.state.users.map (item =>

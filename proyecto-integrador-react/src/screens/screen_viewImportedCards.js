@@ -30,7 +30,7 @@ class screen_viewImportedCards extends Component {
            console.log(error)
        }
    }
-
+// flatlist
    render(){
        const values = this.state.importedUsers.map( item =>
         <Text key={item.login.uuid}
