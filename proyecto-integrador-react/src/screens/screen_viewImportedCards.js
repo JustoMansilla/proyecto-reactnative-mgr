@@ -41,7 +41,7 @@ class screen_viewImportedCards extends Component {
              <Text> Mostramos los valores importados</Text>
              {values}
              <TouchableOpacity onPress={ this.getDataStorage.bind (this)}>
-                 <View> <Text> recuperar datos</Text></View>
+                 <View> <Text> Recuperar datos</Text></View>
              </TouchableOpacity>
 
              <TouchableOpacity onPress= { () => this.setState({importedUsers: []})}>
