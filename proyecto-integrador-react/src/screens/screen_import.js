@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
-class screen_import extends Component {
+class Screen_import extends Component {
     constructor (){
         super();
         this.state ={
@@ -57,4 +57,4 @@ return (
     }
 }
 
-export { screen_import}
+export { Screen_import}

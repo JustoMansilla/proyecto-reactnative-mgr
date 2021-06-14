@@ -11,7 +11,7 @@ import {
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-class screen_viewImportedCards extends Component {
+class Screen_viewImportedCards extends Component {
    constructor (){
        super();
        this.state ={
@@ -51,4 +51,4 @@ class screen_viewImportedCards extends Component {
      )
    }
 }
-export {screen_viewImportedCards}
+export {Screen_viewImportedCards}

@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { getDataFetch } from '../api/api';
 
-export class screen_flatlist extends Component{
+export class Screen_flatlist extends Component{
     constructor(){
         super()
         this.state = {

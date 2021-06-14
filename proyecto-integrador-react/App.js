@@ -13,9 +13,9 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getData, getDataFetch } from './src/api/api';
 import 'react-native-gesture-handler';
-import {screen_viewImportedCards} from './src/screens/screen_viewImportedCards.js';
-import { screen_import } from './src/screens/screen_import';
-import { screen_flatlist } from './src/screens/ screen_flatlist';
+import {Screen_viewImportedCards} from './src/screens/Screen_viewImportedCards.js';
+import { Screen_import } from './src/screens/Screen_import';
+import { Screen_flatlist } from './src/screens/ Screen_flatlist';
 //import { NavigationContainer } from '@react-navigation/native';
 
 export default class App extends Component {
@@ -35,7 +35,7 @@ export default class App extends Component {
 
          <SafeAreaView style={{flex: 1, flexDirection: 'column'}}>
          <Text>Probando</Text>
-         <screen_flatlist/>
+        <Screen_flatlist/>
          </SafeAreaView>
         
         // </NavigationContainer>    
