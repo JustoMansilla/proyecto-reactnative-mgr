@@ -25,8 +25,8 @@ export class Screen_flatlist extends Component{
         renderItem = ({item}) => {
         return (
             //traer todo lo que queramos de la api
-                    <Text>{item.name.first}</Text>,
-                    <Text>{item.name.last}</Text>
+                    <Text>{item.name.last}</Text>,
+                    <Text>{item.name.first}</Text>
 
                 )
     }

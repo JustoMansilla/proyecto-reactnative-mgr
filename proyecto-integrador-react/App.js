@@ -15,7 +15,7 @@ import { getData, getDataFetch } from './src/api/api';
 import 'react-native-gesture-handler';
 import {Screen_viewImportedCards} from './src/screens/Screen_viewImportedCards.js';
 import { Screen_import } from './src/screens/Screen_import';
-import { Screen_flatlist } from './src/screens/ Screen_flatlist';
+import { Screen_flatlist} from './src/screens/Screen_flatlist';
 //import { NavigationContainer } from '@react-navigation/native';
 
 export default class App extends Component {
