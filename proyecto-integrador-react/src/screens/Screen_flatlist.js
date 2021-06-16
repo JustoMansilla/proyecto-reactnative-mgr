@@ -26,11 +26,27 @@ export class Screen_flatlist extends Component{
         renderItem = ({item}) => {
         return (
 
+          
                 <View style={styles.card}>
+                    <Image style={styles.image} source={{uri: item.picture.thumbnail}}/>
                     <Text style={styles.text}>{item.name.first}</Text>
                     <Text style={styles.text}>{item.name.last}</Text>
+
+                    <Button
+                        title="Ver mas datos!"
+                        color="white"
+                        backgroundColor="black"
+                        onPress={() => Alert.alert("Edad: " + item.dob.age, "Ciudad/Estado: " + item.location.city + "-" + item.location.state, "Pais: " + item.location.country, "Codigo Postal: " + item.location.postcode, "Fecha de Registro:: " + item.registered, "Codigo Postal: " + item.location.postcode, "Tel.: " + item.phone)}
+                    />
+                        
                 </View>
                 )
+    }
+
+    separator = () => {
+        return ( 
+            <View style={styles.separator}/>
+        )
     }
 
     componentDidMount() {
@@ -50,6 +66,7 @@ export class Screen_flatlist extends Component{
                                     <FlatList data= {this.state.contactos} 
                                     renderItem= {this.renderItem} 
                                     keyExtractor = {this.keyExtractor}
+                                    numColumns={2}
                                     ></FlatList>
                             </View>
                         )
@@ -73,8 +90,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         margin: 5,
         padding: 5,
-        width: 150,
-        height: 100
+        width: 175,
+        height: 200
     },
     text: {
         fontSize: 20
@@ -82,5 +99,13 @@ const styles = StyleSheet.create({
     separator: {
         borderBottomColor: 'black',
         borderBottomWidth: 1
+    },
+    image: {
+        width: 50,
+        height: 50
+    },
+    textVerMas: {
+        fontSize: 15,
+        color: 'white'
     }
 })
