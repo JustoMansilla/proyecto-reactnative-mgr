@@ -15,11 +15,10 @@ import { getData, getDataFetch } from './src/api/api';
 import 'react-native-gesture-handler';
 import {Screen_viewImportedCards} from './src/screens/Screen_viewImportedCards.js';
 import { Screen_import } from './src/screens/Screen_import';
-<<<<<<< HEAD
+
 import { Screen_flatlist } from './src/screens/Screen_flatlist';
-=======
 import { Screen_flatlist} from './src/screens/Screen_flatlist';
->>>>>>> 867e46da5be184fe375487c5b3d3a6ebbba20c9d
+import { Screen_flatlist} from './src/screens/Screen_flatlist';
 //import { NavigationContainer } from '@react-navigation/native';
 
 export default class App extends Component {

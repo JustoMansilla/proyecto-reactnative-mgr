@@ -25,12 +25,6 @@ export class Screen_flatlist extends Component{
         keyExtractor = (item , idx) =>idx.toString();
         renderItem = ({item}) => {
         return (
-<<<<<<< HEAD:proyecto-integrador-react/src/screens/Screen_flatlist.js
-=======
-            //traer todo lo que queramos de la api
-                    <Text>{item.name.last}</Text>,
-                    <Text>{item.name.first}</Text>
->>>>>>> 867e46da5be184fe375487c5b3d3a6ebbba20c9d:proyecto-integrador-react/src/screens/ screen_flatlist.js
 
                 <View style={styles.card}>
                     <Text style={styles.text}>{item.name.first}</Text>
