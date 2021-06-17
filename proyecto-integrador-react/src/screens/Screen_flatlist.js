@@ -8,7 +8,8 @@ import {
   View,
   TouchableOpacity,
   FlatList,
-  StyleSheet
+  StyleSheet,
+  ActivityIndicator,
 } from 'react-native';
 import { getDataFetch } from '../api/api';
 
@@ -16,7 +17,8 @@ export class Screen_flatlist extends Component{
     constructor(){
         super()
         this.state = {
-            contactos: []
+            contactos: [],
+            activity: true
         }
     }
     
@@ -52,7 +54,7 @@ export class Screen_flatlist extends Component{
     componentDidMount() {
         const results = getDataFetch()
         .then(results => {
-            this.setState({contactos: results});
+            this.setState({contactos: results, activity: false});
         }
             )
         
@@ -62,13 +64,24 @@ export class Screen_flatlist extends Component{
     render(){
     
                 return(
+                    <View>
+                        <View style={styles.headerBorder}>
+                            <Text>Dashboard</Text>
+                        </View>
+
                             <View >
-                                    <FlatList data= {this.state.contactos} 
-                                    renderItem= {this.renderItem} 
-                                    keyExtractor = {this.keyExtractor}
-                                    numColumns={2}
+                               { this.state.activity 
+                                     ? <ActivityIndicator color="green" 
+                                        animating={this.state.activity} 
+                                        size= "large"/>
+                                    :  <FlatList data= {this.state.contactos} 
+                                         renderItem= {this.renderItem} 
+                                        keyExtractor = {this.keyExtractor}
+                                         numColumns={2}
                                     ></FlatList>
+                                }
                             </View>
+                    </View>
                         )
 
              }
@@ -78,6 +91,11 @@ export class Screen_flatlist extends Component{
 // poner todo el css
 
 const styles = StyleSheet.create({
+    headerBorder:{
+flex:1,
+backgroundColor: "#39ff14",
+    },
+    
     container: {
         flex: 1,
         justifyContent: 'center',
