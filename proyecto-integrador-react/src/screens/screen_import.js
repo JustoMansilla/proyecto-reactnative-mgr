@@ -41,8 +41,16 @@ try {
 
 render(){
     const values = this.state.users.map (item =>
-        <Text key={item.login.uuid}
-        style={styles.text}>{item.name.first}</Text> )
+      
+        <View  key={item.login.uuid}>
+     <Image style={styles.image} source={{uri: item.picture.thumbnail}} />
+                    <Text style={styles.text}>{item.name.first}</Text>
+                    <Text style={styles.text}>{item.name.last}</Text>
+       
+       </View> 
+       
+       )
+
 
 
 return (
