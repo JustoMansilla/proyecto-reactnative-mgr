@@ -16,7 +16,7 @@ import 'react-native-gesture-handler';
 import {Screen_viewImportedCards} from './src/screens/Screen_viewImportedCards.js';
 import { Screen_import } from './src/screens/Screen_import';
 import { Screen_flatlist } from './src/screens/Screen_flatlist';
-//import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { ActivityIndicatorG } from './src/screens/ActivityIndicatorG';
 
 export default class App extends Component {
@@ -32,13 +32,13 @@ export default class App extends Component {
 
       return(
 
-        // <NavigationContainer>
+         <NavigationContainer>
 
          <SafeAreaView style={{flex: 1, flexDirection: 'column'}}>
           <Screen_flatlist/>
          </SafeAreaView>
         
-        // </NavigationContainer>    
+         </NavigationContainer>    
       )
    };
 }
