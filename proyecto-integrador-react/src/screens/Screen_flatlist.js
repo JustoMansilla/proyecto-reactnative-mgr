@@ -37,6 +37,9 @@ export class Screen_flatlist extends Component{
                     <Image style={styles.image} source={{uri: item.picture.thumbnail}}/>
                     <Text style={styles.text}>{item.name.first}</Text>
                     <Text style={styles.text}>{item.name.last}</Text>
+                    <Text style={styles.text}>{item.email}</Text>
+                    <Text style={styles.text}>{item.dob.date} / ({item.dob.age})</Text>
+
 
                     <Button
                         title="Ver mas datos!"
