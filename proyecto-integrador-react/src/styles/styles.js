@@ -1,5 +1,8 @@
 import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create ({
+
+   
+
     navbarButton: {
         width: 50,
         height: 40,
@@ -68,7 +71,38 @@ textVerMas: {
     color: 'white'
 },
 
+modalContainer: {
+    flex : 1,
+    justifyContent:"center",
+    alignItems:'center'
+         
+    },
+
+    modal: {
+        width: 100,
+        height:200,
+        backgroundColor: 'white',
+        borderRadius: 20,
+        shadowColor: 'blue',
+        elevation: 30
+
+        
+    },
+
+    textModal: {
+        fontSize: 20 
+    },
+
+    closeButton: {
+fontSize: 20,
+position: 'absolute',
+right: 20,
+top:10
+    }
+
 })
+
+
 
 
 export {styles};

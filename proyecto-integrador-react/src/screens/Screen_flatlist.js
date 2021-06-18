@@ -10,10 +10,13 @@ import {
   FlatList,
   StyleSheet,
   ActivityIndicator,
+  
 } from 'react-native';
 import { getDataFetch } from '../api/api';
 import {Header} from '../components/Header';
 import {styles} from '../styles/styles';
+import {Cards} from '../components/Cards'
+
 
 
 
@@ -22,7 +25,8 @@ export class Screen_flatlist extends Component{
         super()
         this.state = {
             contactos: [],
-            activity: true
+            activity: true,
+           
         }
     }
     
@@ -33,6 +37,8 @@ export class Screen_flatlist extends Component{
         return (
 
           
+    
+         
                 <View style={styles.card}>
                     <Image style={styles.image} source={{uri: item.picture.thumbnail}}/>
                     
@@ -76,7 +82,7 @@ export class Screen_flatlist extends Component{
                     <SafeAreaView>
                     <View>
                         
-                        <Header/>
+                   
                         <View style={styles.navbar}> 
             <View style={styles.navbarContainer}>
               <TouchableOpacity onPress= { () => this.props.navigation.openDrawer()}>
@@ -103,7 +109,11 @@ export class Screen_flatlist extends Component{
                                     ></FlatList>
                                 }
                             </View>
+                            
                     </View>
+                 
+                    
+                
                     </SafeAreaView>
                         )
 
