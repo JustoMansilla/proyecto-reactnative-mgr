@@ -35,10 +35,12 @@ export class Screen_flatlist extends Component{
           
                 <View style={styles.card}>
                     <Image style={styles.image} source={{uri: item.picture.thumbnail}}/>
-                    <Text style={styles.text}>{item.name.first}</Text>
-                    <Text style={styles.text}>{item.name.last}</Text>
-                    <Text style={styles.text}>{item.email}</Text>
-                    <Text style={styles.text}>{item.dob.date} / ({item.dob.age})</Text>
+                    
+                    <Text style={styles.text}>Nombre completo: {item.name.first} {item.name.last}</Text> 
+
+                    <Text style={styles.text}>E-mail: {item.email}</Text>
+
+                    <Text style={styles.text}>Nacimiento: {item.dob.date.substring(0, 10)} ({item.dob.age})</Text>
 
 
                     <Button
@@ -97,7 +99,7 @@ export class Screen_flatlist extends Component{
                                     : <FlatList data= {this.state.contactos} 
                                          renderItem= {this.renderItem} 
                                         keyExtractor = {this.keyExtractor}
-                                         numColumns={2}
+                                        
                                     ></FlatList>
                                 }
                             </View>

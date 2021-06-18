@@ -48,8 +48,8 @@ card: {
     borderWidth: 1,
     margin: 5,
     padding: 5,
-    width: 175,
-    height: 200
+    width: 275,
+    height: 400
 },
 text: {
     fontSize: 20,
