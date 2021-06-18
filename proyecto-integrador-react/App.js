@@ -7,7 +7,8 @@ import {
   SafeAreaView,
   Alert,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  DrawerLayoutAndroid
 } from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -18,9 +19,12 @@ import { Screen_import } from './src/screens/Screen_import';
 import { Screen_flatlist } from './src/screens/Screen_flatlist';
 import { NavigationContainer } from '@react-navigation/native';
 import { ActivityIndicatorG } from './src/screens/ActivityIndicatorG';
-import { createStackNavigatior } from '@react-navigation/stack'
 import { startClock } from 'react-native-reanimated';
+import { Screen_bin } from './src/screens/Screen_bin';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 
+
+const Drawer = createDrawerNavigator();
 export default class App extends Component {
     constructor(props) {
       super(props);
@@ -34,16 +38,31 @@ export default class App extends Component {
 
       return(
 
-         <NavigationContainer>
-           <stack.Navigator>
-             <Stack.Screen name= "Screen_import" component = {Screen_import}/>
-             <Stack.Screen name= "Screen_viewImport" component = {Screen_viewImport}/>
-           </stack.Navigator>
-         <SafeAreaView style={{flex: 1, flexDirection: 'column'}}>
-          <Screen_flatlist/>
-         </SafeAreaView>
+        <NavigationContainer>
+       <Drawer.Navigator
+       initialRouteName="Screen_Flatlist"
+       drawerPosition="left"
+       drawerType= "slide"
+       overlayColor= "light-blue"
+       drawerStyle={{
+        backgroundColor: '#blue',
+       }}
+       drawerContentOptions={{
+         activeTintColor: '#000000', 
+         activeBackgroundColor: '#red', 
+         inactiveTintColor: '#ffffff'
+       }}
+       >
         
-         </NavigationContainer>    
+        <Drawer.Screen name='Screen_Flatlist' component={Screen_flatlist}></Drawer.Screen>
+        <Drawer.Screen name='Screen_viewImport' component={Screen_viewImportedCards}></Drawer.Screen>
+        <Drawer.Screen name='Screen_bin' component={Screen_bin}></Drawer.Screen>
+        <Drawer.Screen name='Screen_import' component={Screen_import}></Drawer.Screen>
+
+       </Drawer.Navigator>
+     </NavigationContainer>
+        
+            
       )
    };
 }

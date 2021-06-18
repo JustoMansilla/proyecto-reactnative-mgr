@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import { getDataFetch } from '../api/api';
 
+
 export class Screen_flatlist extends Component{
     constructor(){
         super()
@@ -65,8 +66,10 @@ export class Screen_flatlist extends Component{
     
                 return(
                     <View>
-                        <View style={styles.headerBorder}>
-                            <Text>Dashboard</Text>
+                        <Text>
+                            Dashboards //Poner Header 
+                        </Text>
+                        <View>
                         </View>
 
                             <View >
