@@ -6,9 +6,15 @@ import {
   Image, 
   FlatList, 
   TouchableOpacity,
-  Button
+  Button,
+  DrawerLayoutAndroid
 } from 'react-native';
 import {styles} from '../styles/styles';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import 'react-native-gesture-handler';
+
+
 
 export class Header extends Component {
     render() {

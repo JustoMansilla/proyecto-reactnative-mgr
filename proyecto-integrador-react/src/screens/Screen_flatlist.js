@@ -72,6 +72,16 @@ export class Screen_flatlist extends Component{
                     <View>
                         
                         <Header/>
+                        <View style={styles.navbar}> 
+            <View style={styles.navbarContainer}>
+              <TouchableOpacity onPress= { () => this.props.navigation.openDrawer()}>
+              <View style={styles.navbarButton}>
+                <Text>E</Text>
+              </View>
+              </TouchableOpacity>
+            </View>
+            <Text style={styles.navbarDetails}> Dashboards </Text>            
+              </View> 
 
                         <View>
                         </View>
