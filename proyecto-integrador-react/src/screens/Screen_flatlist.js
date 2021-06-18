@@ -74,7 +74,7 @@ export class Screen_flatlist extends Component{
                                      ? <ActivityIndicator color="green" 
                                         animating={this.state.activity} 
                                         size= "large"/>
-                                    :  <FlatList data= {this.state.contactos} 
+                                    : <FlatList data= {this.state.contactos} 
                                          renderItem= {this.renderItem} 
                                         keyExtractor = {this.keyExtractor}
                                          numColumns={2}
