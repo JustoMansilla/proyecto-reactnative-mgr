@@ -3,7 +3,7 @@ const styles = StyleSheet.create ({
     navbarButton: {
         width: 50,
         height: 40,
-        backgroundColor: '#1C265C',
+        backgroundColor: 'red',
     
         alignItems: 'center',
         justifyContent: 'center',
@@ -12,7 +12,7 @@ const styles = StyleSheet.create ({
     },
     navbarText: {
         fontSize: 30,
-    
+        color: 'red'
     }, 
     navbarContainer: {
         position: 'absolute'
@@ -36,6 +36,37 @@ const styles = StyleSheet.create ({
    },
 
 
+   container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+},
+card: {
+    backgroundColor: 'green',
+    borderRadius: 5,
+    borderStyle: 'solid',
+    borderWidth: 1,
+    margin: 5,
+    padding: 5,
+    width: 175,
+    height: 200
+},
+text: {
+    fontSize: 20,
+    color:"black"
+},
+separator: {
+    borderBottomColor: 'black',
+    borderBottomWidth: 1
+},
+image: {
+    width: 50,
+    height: 50
+},
+textVerMas: {
+    fontSize: 15,
+    color: 'white'
+},
 
 })
 

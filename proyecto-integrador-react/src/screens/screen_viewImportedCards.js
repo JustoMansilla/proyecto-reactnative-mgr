@@ -8,7 +8,8 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-
+import {Header} from '../components/Header';
+import {styles} from '../styles/styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 class Screen_viewImportedCards extends Component {
@@ -30,24 +31,26 @@ class Screen_viewImportedCards extends Component {
            console.log(error)
        }
    }
-// flatlist
    render(){
        const values = this.state.importedUsers.map( item =>
         <Text key={item.login.uuid}
         style= {{fontSize: 20}}>{item.name.first}</Text>
         )
      return (
+         <SafeAreaView>
+             <Header/>
          <View> 
              <Text> Mostramos los valores importados</Text>
              {values}
              <TouchableOpacity onPress={ this.getDataStorage.bind (this)}>
-                 <View> <Text> Recuperar datos</Text></View>
+                  <Text> Recuperar datos</Text>
              </TouchableOpacity>
 
              <TouchableOpacity onPress= { () => this.setState({importedUsers: []})}>
-                 <View> <Text> Borrar datos importados</Text></View>
+                <Text> Borrar datos importados</Text>
              </TouchableOpacity>
          </View>
+         </SafeAreaView>
      )
    }
 }

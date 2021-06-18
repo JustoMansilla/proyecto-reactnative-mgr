@@ -12,6 +12,9 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { getDataFetch } from '../api/api';
+import {Header} from '../components/Header';
+import {styles} from '../styles/styles';
+
 
 
 export class Screen_flatlist extends Component{
@@ -65,10 +68,11 @@ export class Screen_flatlist extends Component{
     render(){
     
                 return(
+                    <SafeAreaView>
                     <View>
-                        <Text>
-                            Dashboards //Poner Header 
-                        </Text>
+                        
+                        <Header/>
+
                         <View>
                         </View>
 
@@ -85,48 +89,11 @@ export class Screen_flatlist extends Component{
                                 }
                             </View>
                     </View>
+                    </SafeAreaView>
                         )
 
              }
 
 }
 
-// poner todo el css
 
-const styles = StyleSheet.create({
-    headerBorder:{
-flex:1,
-backgroundColor: "#39ff14",
-    },
-    
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    card: {
-        backgroundColor: 'green',
-        borderRadius: 5,
-        borderStyle: 'solid',
-        borderWidth: 1,
-        margin: 5,
-        padding: 5,
-        width: 175,
-        height: 200
-    },
-    text: {
-        fontSize: 20
-    },
-    separator: {
-        borderBottomColor: 'black',
-        borderBottomWidth: 1
-    },
-    image: {
-        width: 50,
-        height: 50
-    },
-    textVerMas: {
-        fontSize: 15,
-        color: 'white'
-    }
-})

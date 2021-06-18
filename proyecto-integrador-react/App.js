@@ -38,7 +38,7 @@ export default class App extends Component {
 
       return(
 
-        <NavigationContainer>
+      <NavigationContainer>
        <Drawer.Navigator
        initialRouteName="Screen_Flatlist"
        drawerPosition="left"
@@ -48,14 +48,14 @@ export default class App extends Component {
         backgroundColor: '#blue',
        }}
        drawerContentOptions={{
-         activeTintColor: '#000000', 
-         activeBackgroundColor: '#red', 
-         inactiveTintColor: '#ffffff'
+         activeTintColor: 'black', 
+         activeBackgroundColor: 'rred', 
+         inactiveTintColor: 'blue'
        }}
        >
         
         <Drawer.Screen name='Screen_Flatlist' component={Screen_flatlist}></Drawer.Screen>
-        <Drawer.Screen name='Screen_viewImport' component={Screen_viewImportedCards}></Drawer.Screen>
+        <Drawer.Screen name='Screen_viewImportedCards' component={Screen_viewImportedCards}></Drawer.Screen>
         <Drawer.Screen name='Screen_bin' component={Screen_bin}></Drawer.Screen>
         <Drawer.Screen name='Screen_import' component={Screen_import}></Drawer.Screen>
 

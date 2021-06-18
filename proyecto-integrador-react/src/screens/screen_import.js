@@ -8,7 +8,8 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-
+import {Header} from '../components/Header';
+import {styles} from '../styles/styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 class Screen_import extends Component {
     constructor (){
@@ -41,10 +42,12 @@ try {
 render(){
     const values = this.state.users.map (item =>
         <Text key={item.login.uuid}
-        style={{fontSize:20}}>{item.name.first}</Text> )
+        style={styles.text}>{item.name.first}</Text> )
 
 
 return (
+    <SafeAreaView>
+        <Header/>
     <View>
         <Text>Mostrar tarjetas</Text>
         {values}
@@ -53,6 +56,7 @@ return (
                 <View><Text>Guardar Datos</Text></View>
         </TouchableOpacity>
         </View>
+        </SafeAreaView>
         )
     }
 }
