@@ -37,26 +37,27 @@ export class Screen_flatlist extends Component{
         return (
 
           
-    
+            <Cards
+            item = {item}/>
          
-                <View style={styles.card}>
-                    <Image style={styles.image} source={{uri: item.picture.thumbnail}}/>
+                // <View style={styles.card}>
+                //     <Image style={styles.image} source={{uri: item.picture.thumbnail}}/>
                     
-                    <Text style={styles.text}>Nombre completo: {item.name.first} {item.name.last}</Text> 
+                //     <Text style={styles.text}>Nombre completo: {item.name.first} {item.name.last}</Text> 
 
-                    <Text style={styles.text}>E-mail: {item.email}</Text>
+                //     <Text style={styles.text}>E-mail: {item.email}</Text>
 
-                    <Text style={styles.text}>Nacimiento: {item.dob.date.substring(0, 10)} ({item.dob.age})</Text>
+                //     <Text style={styles.text}>Nacimiento: {item.dob.date.substring(0, 10)} ({item.dob.age})</Text>
 
 
-                    <Button
-                        title="Ver mas datos!"
-                        color="white"
-                        backgroundColor="black"
-                        onPress={() => Alert.alert("Edad: " + item.dob.age, "Ciudad/Estado: " + item.location.city + "-" + item.location.state, "Pais: " + item.location.country, "Codigo Postal: " + item.location.postcode, "Fecha de Registro:: " + item.registered, "Codigo Postal: " + item.location.postcode, "Tel.: " + item.phone)}
-                    />
+                //     <Button
+                //         title="Ver mas datos!"
+                //         color="white"
+                //         backgroundColor="black"
+                //         onPress={() => Alert.alert("Edad: " + item.dob.age, "Ciudad/Estado: " + item.location.city + "-" + item.location.state, "Pais: " + item.location.country, "Codigo Postal: " + item.location.postcode, "Fecha de Registro:: " + item.registered, "Codigo Postal: " + item.location.postcode, "Tel.: " + item.phone)}
+                //     />
                         
-                </View>
+                // </View>
                 )
     }
 
