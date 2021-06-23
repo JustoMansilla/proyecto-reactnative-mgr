@@ -51,14 +51,12 @@ export class Cards extends Component {
             <Text style={styles.text}>Nacimiento: {this.props.elemento.dob.date.substring(0, 10)} ({this.props.elemento.dob.age})</Text>
 
             <TouchableOpacity onPress= {() => this.setState({showModal: true})} style={styles.closeButton}>
-                <View style={styles.moreContainer}> 
-                    <Pressable
-                        style={[styles.button, styles.buttonOpen]}
-                        onPress={() => setModalVisible(true)}
-                    >
-                    <Text style={styles.textStyle}>Mas info.</Text>
-                    </Pressable>
-                </View>
+                    <View style={styles.moreContainer}>
+                        <Text  style={styles.btnDescripcion}>Ver más</Text>
+                        <View style={styles.btnMasBorde}>
+                            <Text  style={styles.btnMas}>+</Text>
+                        </View>
+                    </View>
             </TouchableOpacity> 
 
 
