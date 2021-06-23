@@ -231,6 +231,16 @@ modalContainer: {
         borderRadius: 10,
         backgroundColor: 'azure', 
   },
+  containerActivity: {
+    flex: 1,
+    justifyContent: "center"
+  },
+  horizontal: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    paddingTop: 250
+
+  }
 })
 
 
