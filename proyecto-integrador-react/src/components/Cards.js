@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import { View, SafeAreaView ,ScrollView,TextInput, Image,Text,Pressable, Modal, Button, TouchableOpacity} from 'react-native'
 import { styles } from '../styles/styles'
-import Modal2 from '../components/Modal'
 import {getDataFetch} from '../api/api'
 
 
@@ -53,9 +52,7 @@ export class Cards extends Component {
             <TouchableOpacity onPress= {() => this.setState({showModal: true})} style={styles.closeButton}>
                     <View style={styles.moreContainer}>
                         <Text  style={styles.btnDescripcion}>Ver más</Text>
-                        <View style={styles.btnMasBorde}>
-                            <Text  style={styles.btnMas}>+</Text>
-                        </View>
+                       
                     </View>
             </TouchableOpacity> 
 
