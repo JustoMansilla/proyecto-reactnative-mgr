@@ -94,11 +94,67 @@ modalContainer: {
     },
 
     closeButton: {
-fontSize: 20,
-position: 'absolute',
-right: 20,
-top:10
-    }
+        fontSize: 20,
+        position: 'absolute',
+        right: 20,
+        top:10
+    },
+    principalTextModal: {
+        fontSize: 24,
+        padding: 5,
+        fontWeight: 'bold'
+    
+    },
+    moreContainer: {
+        marginLeft: 2,
+        marginTop: 5,
+    },
+    btnMas: {
+        color: '#5E72E4',
+        fontWeight: 'bold',
+        alignSelf: 'center',
+        fontSize: 10,
+    },
+    modalCloseBtn: {
+        color: '#ffffff',
+        fontWeight: 'bold',
+        justifyContent: 'center',
+        alignSelf: 'center',
+    },
+    btnModal : {
+        position: 'absolute',
+        bottom: 560, 
+        left: 380,
+    },
+    modalCloseBtnContainer: {
+        backgroundColor: '#6200E8',
+        width: 20,
+        height: 20,
+        borderRadius: 15,
+    
+    }, 
+    cardImageModal: {
+        width: 210,
+        height: 210,
+        marginTop: 10,
+        borderRadius: 10,
+    }, 
+    modalBtnText: {
+        color: '#ffffff',
+        fontWeight: 'bold',
+        alignSelf: 'center'
+    },
+    modal: {
+        width: "80%",
+        height: "80%",
+        backgroundColor: "#FEF5E7",
+        alignItems:'center',
+        borderTopRightRadius: 20,
+        borderTopLeftRadius: 20,
+        elevation: 30,
+        shadowColor: '#000000',
+    
+    }, 
 
 })
 

@@ -12,7 +12,7 @@ import {Header} from '../components/Header';
 import { Cards } from '../components/Cards';
 import {styles} from '../styles/styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Screen_import} from './screen_import'
+import {Screen_import} from './Screen_import'
 
 class Screen_viewImportedCards extends Component {
    constructor (){

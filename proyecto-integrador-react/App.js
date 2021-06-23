@@ -14,8 +14,8 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getData, getDataFetch } from './src/api/api';
 import 'react-native-gesture-handler';
-import {Screen_viewImportedCards} from './src/screens/screen_viewImportedCards';
-import { Screen_import } from './src/screens/screen_import';
+import {Screen_viewImportedCards} from './src/screens/Screen_viewImportedCards';
+import { Screen_import } from './src/screens/Screen_import';
 import { Screen_flatlist } from './src/screens/Screen_flatlist';
 import { NavigationContainer } from '@react-navigation/native';
 import { ActivityIndicatorG } from './src/screens/ActivityIndicatorG';

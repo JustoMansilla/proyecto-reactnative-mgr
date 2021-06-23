@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import DeleteUsers from '../src/components/DeleteUsers';
+import TarjetaBorrada from '../components/TarjetaBorrada';
 import {
   Text,
   Image,
@@ -8,7 +8,8 @@ import {
   SafeAreaView,
   Alert,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  FlatList
 } from 'react-native';
 import {Header} from '../components/Header';
 import {styles} from '../styles/styles';
@@ -37,8 +38,10 @@ export class Screen_bin extends Component {
 
 
     render () {
+
       const valores = this.state.tarjetasBorradas.map( item =>
-        <DeleteUsers key = {item.login.uuid} elemento = {item}/>)
+        <TarjetaBorrada key = {item.login.uuid} elemento = {item}/>)
+        
         return(
           <View> 
           <Text style = {{width:"100%", marginTop: "50%"}}>Papelera</Text>
