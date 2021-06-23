@@ -7,7 +7,8 @@ import {
   FlatList, 
   TouchableOpacity,
   Button,
-  DrawerLayoutAndroid
+  DrawerLayoutAndroid,
+  Pressable
 } from 'react-native';
 import {styles} from '../styles/styles';
 import {createDrawerNavigator} from '@react-navigation/drawer';
@@ -21,11 +22,9 @@ export class Header extends Component {
         return (
             <View style={styles.navbar}> 
             <View style={styles.navbarContainer}>
-              <TouchableOpacity onPress= { () => this.props.navigation.openDrawer()}>
-              <View style={styles.navbarButton}>
+              <Pressable onPress= { () => this.props.navigation.openDrawer()}>
                 <Text>E</Text>
-              </View>
-              </TouchableOpacity>
+              </Pressable>
             </View>
             <Text style={styles.navbarDetails}> Dashboards </Text>            
               </View> 

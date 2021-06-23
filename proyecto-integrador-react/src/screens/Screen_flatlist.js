@@ -80,7 +80,9 @@ export class Screen_flatlist extends Component{
                                { this.state.activity 
                                      ? <ActivityIndicator color="green" 
                                         animating={this.state.activity} 
-                                        size= "large"/>
+                                        size= "large"
+                                        style={styles.containerActivity}
+                                        style={styles.horizontal}/>
                                     : <FlatList data= {this.state.contactos} 
                                          renderItem= {this.renderItem} 
                                         keyExtractor = {this.keyExtractor}

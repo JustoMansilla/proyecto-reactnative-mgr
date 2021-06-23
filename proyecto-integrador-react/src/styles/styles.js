@@ -216,7 +216,17 @@ modalContainer: {
     scrollView: {
         backgroundColor: 'white',
         marginHorizontal: 0,
-      },
+    },
+    horizontal: {
+        flexDirection: "row",
+        justifyContent: "space-around",
+        marginTop: 250
+    },
+    containerActivity: {
+        flex: 1,
+        justifyContent: "center"
+    },
+    
 
 })
 
