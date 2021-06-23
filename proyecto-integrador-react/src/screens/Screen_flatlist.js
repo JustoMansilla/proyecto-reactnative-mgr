@@ -86,16 +86,11 @@ export class Screen_flatlist extends Component{
     keyExtractor = (item , idx) =>idx.toString();
     renderItem = ({item}) => {
     return (
-
-      
         <Cards
         elemento = {item}
         onDelete = {this.borrarTarjeta.bind(this)}
-        />
-        
-            
-            )
-}
+        />  )
+    }
 
 async getData(){
     try{
@@ -141,9 +136,9 @@ borrarTarjeta (idTarjeta){
     const { search } = this.state;
 
         return(
-
-            <SafeAreaView>
-                <View>
+            <SafeAreaView style={{flex: 1}}>
+                <ScrollView style={{flex: 1}}>
+                
                     <View style={styles.navbar}> 
                         <View style={styles.navbarContainer}>
                             <TouchableOpacity onPress= { () => this.props.navigation.openDrawer()}>
@@ -154,9 +149,11 @@ borrarTarjeta (idTarjeta){
                         </View>
                         <Text style={styles.navbarDetails}> Dashboard </Text>            
                     </View> 
+
                     <View>
                     <TextInput style={styles.SearchBar} placeholder="Search" onChangeText={text => {this.setState({search: text}); this.filter(text) }} value={search}  />
                     </View>
+                    <View>
 
                                { this.state.activity 
                                      ? <ActivityIndicator color="green" 
@@ -169,14 +166,12 @@ borrarTarjeta (idTarjeta){
                                         keyExtractor = {this.keyExtractor}
                                         
                                     ></FlatList>
-                                }
-                     
-                            
-                </View>
-                 
-                    
-               
+                                }                 
+                    </View>
+
+                </ScrollView>
              </SafeAreaView>
+             
                         )
 
              }

@@ -21,7 +21,7 @@ const styles = StyleSheet.create ({
         position: 'absolute'
     },
     navbar: {
-        display: 'flex',
+        flex: 1,
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: '#1C265C',
@@ -42,7 +42,8 @@ const styles = StyleSheet.create ({
    container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    height: '100%'
 },
 card: {
     backgroundColor: 'green',

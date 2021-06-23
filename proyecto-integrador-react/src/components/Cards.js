@@ -123,7 +123,8 @@ export class Cards extends Component {
                         </View>
                     </View>
                 </Modal>
-                <Button title = "BORRAR" onPress={this.props.onDelete.bind(this, this.props.elemento.id)}></Button>
+                <Button title = "BORRAR" onPress={this.props.onDelete.bind(this, this.props.elemento.id)}>
+                </Button>
         </View>
     
       

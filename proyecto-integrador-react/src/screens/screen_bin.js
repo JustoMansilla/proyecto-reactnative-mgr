@@ -39,36 +39,75 @@ export class Screen_bin extends Component {
 
     render () {
 
-      const valores = this.state.tarjetasBorradas.map( item =>
-        <TarjetaBorrada elemento = {item.login.uuid} elemento = {item}/>)
+      
 
         return(
 
-          <SafeAreaView>
-          <View> 
+       
 
-            <Header/>
-          <Text style = {{width:"100%", marginTop: "50%"}}>Papelera</Text>
-  
+        <SafeAreaView style={styles.container}>
+                   
+        {/* <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }} >
+          <Pressable   style={styles.buttonAZZA}  onPress={()=> this.Reset("@Borrados")} >
+            <Text> Reset</Text>
+          </Pressable>
+        </View > */}
+
+        <View style={styles.container}></View>
+
          
-  
-          {valores}
-  
-          <TouchableOpacity onPress={this.getTarjetaEliminada.bind(this)}>
-            <View>
-              <Text>Ver datos borrados</Text>
-            </View>
-          </TouchableOpacity>
-  
-          <TouchableOpacity onPress={ () => this.setState({tarjetasBorradas: [] })}>
-            <View>
-              <Text>Eliminar</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-        </SafeAreaView>
+        
+        {
+          <FlatList
+          style={styles.container}
+          data={this.state.tarjetasBorradas}
+          keyExtractor={ (item, idx) => idx.toString()}
+
+
+          renderItem={ ({item}) =>
+            (
+
+
+        <TarjetaBorrada onDelete= {this.borrarItem.bind(this)}></TarjetaBorrada>
+
+             )
+
+
+        }
+        
+        />
+      }
+
+      </SafeAreaView>
       )
         
      }
   }
+
+  // const valores = this.state.tarjetasBorradas.map( item =>
+      //   <TarjetaBorrada elemento = {item.login.uuid} elemento = {item}/>)
+
+   //   <SafeAreaView>
+        //   <View> 
+
+        //     <Header/>
+        //   <Text style = {{width:"100%", marginTop: "50%"}}>Papelera</Text>
+  
+         
+  
+        //   {valores}
+  
+        //   <TouchableOpacity onPress={this.getTarjetaEliminada.bind(this)}>
+        //     <View>
+        //       <Text>Ver datos borrados</Text>
+        //     </View>
+        //   </TouchableOpacity>
+  
+        //   <TouchableOpacity onPress={ () => this.setState({tarjetasBorradas: [] })}>
+        //     <View>
+        //       <Text>Eliminar</Text>
+        //     </View>
+        //   </TouchableOpacity>
+        // </View>
+        // </SafeAreaView>
 
