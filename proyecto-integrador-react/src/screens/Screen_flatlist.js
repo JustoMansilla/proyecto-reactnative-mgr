@@ -33,6 +33,8 @@ export class Screen_flatlist extends Component{
             contactosOriginal:[],
             textoBuscar: " ",
             visible: 6,
+            setItem: [],
+           tarjetasBorradas: []
 
 
 
@@ -66,20 +68,6 @@ export class Screen_flatlist extends Component{
     }
   }
 
-
-    
-        keyExtractor = (item , idx) =>idx.toString();
-        renderItem = ({item}) => {
-        return (
-
-          
-            <Cards
-            elemento = {item}/>
-         
-                
-                )
-    }
-
     separator = () => {
         return ( 
             <View style={styles.separator}/>
@@ -94,7 +82,60 @@ export class Screen_flatlist extends Component{
             )
         
     }
-   
+
+    keyExtractor = (item , idx) =>idx.toString();
+    renderItem = ({item}) => {
+    return (
+
+      
+        <Cards
+        elemento = {item}
+        onDelete = {this.borrarTarjeta.bind(this)}
+        />
+        
+            
+            )
+}
+
+async getData(){
+    try{
+        const resultado = await AsyncStorage.getItem("Users");
+        this.setState({contactos: JSON.parse(resultado)});
+        return resultado;
+    }
+    catch(error){
+        console.log(error)
+    }
+} 
+
+borrarTarjeta (idTarjeta){
+    let nuevoArray = this.state.contactos.filter((tarjeta) => {
+        return tarjeta.id !== idTarjeta 
+    });
+
+    let tarjetasBorradas = this.state.contactos.filter((tarjeta) => {
+      return tarjeta.id === idTarjeta 
+    });
+
+    this.setState({
+      contactos: nuevoArray,
+    
+      tarjetasBorradas: tarjetasBorradas,
+    })
+    
+  };
+
+  async papeleraStorage(){
+    try{
+        const jsonUsers = JSON.stringify(this.state.tarjetasBorradas);
+        await AsyncStorage.setItem("Papelera", jsonUsers);
+        Alert.alert("Datos almacenados correctamente");
+        console.log(this.state.tarjetasBorradas);
+    }
+    catch(error){
+        console.log(error)
+    }
+} 
 
     render(){
     const { search } = this.state;

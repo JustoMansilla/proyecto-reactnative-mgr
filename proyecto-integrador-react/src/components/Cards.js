@@ -119,11 +119,11 @@ export class Cards extends Component {
                                 </View>
                             </TouchableOpacity> */}
 
-                            {/* <Button title = "BORRAR" onPress={this.props.onDelete.bind(this, this.props.elemento.id)}></Button> */}
+                            
                         </View>
                     </View>
                 </Modal>
-            
+                <Button title = "BORRAR" onPress={this.props.onDelete.bind(this, this.props.elemento.id)}></Button>
         </View>
     
       

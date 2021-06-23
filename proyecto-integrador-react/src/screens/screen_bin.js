@@ -40,7 +40,7 @@ export class Screen_bin extends Component {
     render () {
 
       const valores = this.state.tarjetasBorradas.map( item =>
-        <TarjetaBorrada key = {item.login.uuid} elemento = {item}/>)
+        <TarjetaBorrada elemento = {item.login.uuid} elemento = {item}/>)
 
         return(
 
@@ -62,7 +62,7 @@ export class Screen_bin extends Component {
   
           <TouchableOpacity onPress={ () => this.setState({tarjetasBorradas: [] })}>
             <View>
-              <Text style={{color: 'red'}}>BORRAR DE FORMA PERMANENTE</Text>
+              <Text>Eliminar</Text>
             </View>
           </TouchableOpacity>
         </View>
