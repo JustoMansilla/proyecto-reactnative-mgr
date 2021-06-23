@@ -10,8 +10,9 @@ import {
   FlatList,
   StyleSheet,
   ActivityIndicator,
-  ScrollView
-  
+  ScrollView,
+  TextInput,
+  Pressable,
 } from 'react-native';
 import { getDataFetch } from '../api/api';
 import {Header} from '../components/Header';
@@ -25,13 +26,47 @@ export class Screen_flatlist extends Component{
     constructor(){
         super()
         this.state = {
+            text: '',
             contactos: [],
+            search: '',
             activity: true,
-           
+            contactosOriginal:[],
+            textoBuscar: " ",
+            visible: 6,
+
+
+
         }
     }
     
-    
+    //  buscador
+  filter(text){
+    if (text.length > 0) {
+        // var text = target.value
+      const personajes = this.state.contactos
+      const filtrado = personajes.filter((item) =>{
+      const itemData = item.name.first.toUpperCase()
+      const lastName = item.name.last.toUpperCase()
+      const age = item.dob.age.toString()
+      const textData = text.toUpperCase()
+      return (
+      itemData.includes(textData) || lastName.includes(textData) || age.includes(textData)
+            // comparo name o last name o age con el valor ingresado .
+        )})
+      this.setState({
+        //sete el estado de person con lo filtrado
+          contactos: filtrado,
+          textoBuscar: text,
+      })
+    } else {
+      this.setState({
+      // si no busco nada queda igual
+
+        contactos:this.state.contactosOriginal}) 
+    }
+  }
+
+
     
         keyExtractor = (item , idx) =>idx.toString();
         renderItem = ({item}) => {
@@ -62,6 +97,8 @@ export class Screen_flatlist extends Component{
    
 
     render(){
+    const { search } = this.state;
+
         return(
 
             <SafeAreaView>
@@ -76,6 +113,9 @@ export class Screen_flatlist extends Component{
                         </View>
                         <Text style={styles.navbarDetails}> Dashboard </Text>            
                     </View> 
+                    <View>
+                    <TextInput style={styles.SearchBar} placeholder="Search" onChangeText={text => {this.setState({search: text}); this.filter(text) }} value={search}  />
+                    </View>
 
                                { this.state.activity 
                                      ? <ActivityIndicator color="green" 
