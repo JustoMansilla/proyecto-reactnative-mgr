@@ -195,7 +195,28 @@ modalContainer: {
       modalText: {
         marginBottom: 15,
         textAlign: "center"
-      }
+      },
+      tarjetaAbout: {
+        backgroundColor: '#ffffff',
+        borderRadius: 10,
+        width: 200,
+        height: 180,
+        margin: 10,
+        position: 'relative',
+      },
+      image: {
+        width: 50,
+        height: 50,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
+        position: 'relative',
+        alignSelf: 'center',
+        margin: 10,
+    },
+    scrollView: {
+        backgroundColor: 'white',
+        marginHorizontal: 0,
+      },
 
 })
 

@@ -10,6 +10,7 @@ import {
   FlatList,
   StyleSheet,
   ActivityIndicator,
+  ScrollView
   
 } from 'react-native';
 import { getDataFetch } from '../api/api';
@@ -61,27 +62,21 @@ export class Screen_flatlist extends Component{
    
 
     render(){
-    
-                return(
-                    <SafeAreaView>
-                    <View>
-                        
-                   
-                        <View style={styles.navbar}> 
-            <View style={styles.navbarContainer}>
-              <TouchableOpacity onPress= { () => this.props.navigation.openDrawer()}>
-              <View style={styles.navbarButton}>
-                <Text>E</Text>
-              </View>
-              </TouchableOpacity>
-            </View>
-            <Text style={styles.navbarDetails}> Dashboards </Text>            
-              </View> 
+        return(
 
-                        <View>
+            <SafeAreaView>
+                <View>
+                    <View style={styles.navbar}> 
+                        <View style={styles.navbarContainer}>
+                            <TouchableOpacity onPress= { () => this.props.navigation.openDrawer()}>
+                                <View style={styles.navbarButton}>
+                                    <Text>E</Text>
+                                </View>
+                            </TouchableOpacity>
                         </View>
+                        <Text style={styles.navbarDetails}> Dashboard </Text>            
+                    </View> 
 
-                            <View >
                                { this.state.activity 
                                      ? <ActivityIndicator color="green" 
                                         animating={this.state.activity} 
@@ -92,13 +87,13 @@ export class Screen_flatlist extends Component{
                                         
                                     ></FlatList>
                                 }
-                            </View>
+                     
                             
-                    </View>
+                </View>
                  
                     
-                
-                    </SafeAreaView>
+               
+             </SafeAreaView>
                         )
 
              }

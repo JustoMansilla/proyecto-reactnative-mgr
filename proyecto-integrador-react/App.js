@@ -22,6 +22,8 @@ import { ActivityIndicatorG } from './src/screens/ActivityIndicatorG';
 import { startClock } from 'react-native-reanimated';
 import { Screen_bin } from './src/screens/Screen_bin';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import {AboutUs} from './src/screens/AboutUs';
+
 
 
 const Drawer = createDrawerNavigator();
@@ -58,6 +60,8 @@ export default class App extends Component {
         <Drawer.Screen name='Screen_viewImportedCards' component={Screen_viewImportedCards}></Drawer.Screen>
         <Drawer.Screen name='Screen_bin' component={Screen_bin}></Drawer.Screen>
         <Drawer.Screen name='Screen_import' component={Screen_import}></Drawer.Screen>
+        <Drawer.Screen name='About Us' component={AboutUs}></Drawer.Screen>
+
 
        </Drawer.Navigator>
      </NavigationContainer>

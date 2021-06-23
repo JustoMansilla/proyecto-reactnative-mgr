@@ -41,9 +41,13 @@ export class Screen_bin extends Component {
 
       const valores = this.state.tarjetasBorradas.map( item =>
         <TarjetaBorrada key = {item.login.uuid} elemento = {item}/>)
-        
+
         return(
+
+          <SafeAreaView>
           <View> 
+
+            <Header/>
           <Text style = {{width:"100%", marginTop: "50%"}}>Papelera</Text>
   
          
@@ -62,6 +66,7 @@ export class Screen_bin extends Component {
             </View>
           </TouchableOpacity>
         </View>
+        </SafeAreaView>
       )
         
      }
