@@ -53,7 +53,7 @@ export class Screen_bin extends Component {
           </Pressable>
         </View > */}
 
-        <View style={styles.container}></View>
+        {/* <View style={styles.container}></View> */}
 
          
         
@@ -85,29 +85,29 @@ export class Screen_bin extends Component {
   }
 
   // const valores = this.state.tarjetasBorradas.map( item =>
-      //   <TarjetaBorrada elemento = {item.login.uuid} elemento = {item}/>)
+  //       <TarjetaBorrada elemento = {item.login.uuid} elemento = {item}/>)
 
-   //   <SafeAreaView>
-        //   <View> 
+  //    <SafeAreaView>
+  //         <View> 
 
-        //     <Header/>
-        //   <Text style = {{width:"100%", marginTop: "50%"}}>Papelera</Text>
+  //           <Header/>
+  //         <Text style = {{width:"100%", marginTop: "50%"}}>Papelera</Text>
   
          
   
-        //   {valores}
+  //         {valores}
   
-        //   <TouchableOpacity onPress={this.getTarjetaEliminada.bind(this)}>
-        //     <View>
-        //       <Text>Ver datos borrados</Text>
-        //     </View>
-        //   </TouchableOpacity>
+  //         <TouchableOpacity onPress={this.getTarjetaEliminada.bind(this)}>
+  //           <View>
+  //             <Text>Ver datos borrados</Text>
+  //           </View>
+  //         </TouchableOpacity>
   
-        //   <TouchableOpacity onPress={ () => this.setState({tarjetasBorradas: [] })}>
-        //     <View>
-        //       <Text>Eliminar</Text>
-        //     </View>
-        //   </TouchableOpacity>
-        // </View>
-        // </SafeAreaView>
+  //         <TouchableOpacity onPress={ () => this.setState({tarjetasBorradas: [] })}>
+  //           <View>
+  //             <Text>Eliminar</Text>
+  //           </View>
+  //         </TouchableOpacity>
+  //       </View>
+  //       </SafeAreaView>
 
