@@ -52,12 +52,13 @@ card: {
     borderWidth: 1,
     margin: 5,
     padding: 5,
-    width: 275,
+    width: "95%",
     height: 400
 },
 text: {
     fontSize: 20,
-    color:"black"
+    color:"black",
+    margin: 5
 },
 separator: {
     borderBottomColor: 'black',

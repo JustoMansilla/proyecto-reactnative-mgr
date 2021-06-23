@@ -6,7 +6,8 @@ import {
   SafeAreaView,
   Alert,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import {Header} from '../components/Header';
 import {styles} from '../styles/styles';
@@ -15,57 +16,56 @@ class Screen_import extends Component {
     constructor (){
         super();
         this.state ={
-           users: []
+           usuarios: []
         }
     }
 
 componentDidMount() {
-    fetch('https://randomuser.me/api?results=10')
+    fetch('https://randomuser.me/api?results=15')
     .then ( response => response.json() )
     .then (result=>{
-        this.setState({users: result.results});
+        this.setState({usuarios: result.results});
 })
 }
 
-async storeData(){ //antes de hacer stringify de state.users
+async guardarDatos(){ 
 try {
-    const jsonUsers = JSON.stringify(this.state.users);
+    const jsonUsers = JSON.stringify(this.state.usuarios);
     await AsyncStorage.setItem("Users", jsonUsers);
-    console.log("Datos almacenados");
+    Alert.alert("Datos guardados");
 } catch (error) {
     console.log(error);
         }
     }
 
-//pasar values a flatslist
 
-render(){
-    const values = this.state.users.map (item =>
-      
-        <View  key={item.login.uuid}>
-     <Image style={styles.image} source={{uri: item.picture.thumbnail}} />
-                    <Text style={styles.text}>{item.name.first}</Text>
-                    <Text style={styles.text}>{item.name.last}</Text>
-       
-       </View> 
-       
-       )
-
-
-
-return (
-    <SafeAreaView>
-        <Header/>
-    <View>
-        <Text>Mostrar tarjetas</Text>
-        {values}
-        <TouchableOpacity
-            onPress={this.storeData.bind(this)}>
-                <View><Text>Guardar Datos</Text></View>
-        </TouchableOpacity>
-        </View>
-        </SafeAreaView>
+    render(){
+        const values = this.state.usuarios.map (item =>
+                <View  key={item.login.uuid}>
+                        <Text style={styles.text}>{item.name.first} {item.name.last}</Text>
+                </View> 
         )
+
+        return (
+            <SafeAreaView>
+                <ScrollView>
+                <Header/>
+            <View>
+                <View style={{backgroundColor: 'white', alignItems: 'center', borderRadius: '10%', margin: 30}}>
+                <Text style={{fontSize: 30, alignItems: 'center', margin: 10, textAlign: 'center'}}>Tarjetas importadas del fetch</Text>
+                </View>
+
+                {values}
+
+                <TouchableOpacity
+                    onPress={this.guardarDatos.bind(this)}
+                    style={{backgroundColor: 'white', alignItems: 'center', borderRadius: '10%', margin: 30}}>
+                        <Text style={{fontSize: 30, margin: 10}}>Guardar Datos</Text>
+                </TouchableOpacity>
+            </View>
+                </ScrollView>
+            </SafeAreaView>
+                )
     }
 }
 
