@@ -49,23 +49,28 @@ export default class App extends Component {
        initialRouteName="Screen_Flatlist"
        drawerPosition="left"
        drawerType= "slide"
-       overlayColor= "light-blue"
+       overlayColor= "white"
+
        drawerStyle={{
-        backgroundColor: '#blue',
+        backgroundColor: 'black',
+        color: '#fff'
        }}
+
        drawerContentOptions={{
          activeTintColor: 'black', 
-         activeBackgroundColor: 'rred', 
-         inactiveTintColor: 'blue'
+         activeBackgroundColor: '#fca311', 
+         inactiveTintColor: 'white'
        }}
        >
         
-        <Drawer.Screen name='Screen_Flatlist' component={Screen_flatlist}></Drawer.Screen>
-        <Drawer.Screen name='Screen_viewImportedCards' component={Screen_viewImportedCards}></Drawer.Screen>
-        <Drawer.Screen name='Screen_bin' component={Screen_bin}></Drawer.Screen>
-        <Drawer.Screen name='Screen_import' component={Screen_import}></Drawer.Screen>
-        <Drawer.Screen name='About Us' component={AboutUs}></Drawer.Screen>
+        <Drawer.Screen name='Principal' component={Screen_flatlist}></Drawer.Screen>
+        <Drawer.Screen name='Papelera' component={Screen_bin}></Drawer.Screen>
         <Drawer.Screen name='Mis Contactos' component={SavedContacts}></Drawer.Screen>
+        <Drawer.Screen name='About Us' component={AboutUs}></Drawer.Screen>
+
+        {/* <Drawer.Screen name='Screen_viewImportedCards' component={Screen_viewImportedCards}></Drawer.Screen>
+        <Drawer.Screen name='Screen_import' component={Screen_import}></Drawer.Screen>
+        */}
 
 
 

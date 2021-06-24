@@ -30,16 +30,20 @@ export class Cards extends Component {
             <View style={styles.card}>
 
                 <Image style={styles.image} source={{uri: img}}/>
-                
-                <Text style={styles.text}>Nombre completo: {firstName} {lastName}</Text> 
 
-                <Text style={styles.text}>E-mail: {Email}</Text>
+                <View style={styles.contenedorCard}>
 
-                <Text style={styles.text}>Nacimiento: {Date.substring(0, 10)} ({Age})</Text>
+                <Text style={styles.textContenedorCard}>Nombre completo: {firstName} {lastName}</Text> 
 
-                <TouchableOpacity onPress= {this.openModal} style={styles.closeButton}>
-                    <View >
-                        <Text >Ver más</Text>
+                <Text style={styles.textContenedorCard}>E-mail: {Email}</Text>
+
+                <Text style={styles.textContenedorCard}>Nacimiento: {Date.substring(0, 10)} ({Age})</Text>
+
+                </View>
+
+                <TouchableOpacity onPress= {this.openModal} style={styles.posicionBtnCerrar}>
+                    <View style={styles.btnVerMas}>
+                        <Text style={{padding: 10, fontWeight: 'bold'}}>Ver más</Text>
                     </View>                 
                 </TouchableOpacity>
 
@@ -62,14 +66,18 @@ export class Cards extends Component {
                    Date={Date}
                    id={id}
                   />
-                  <Pressable style={styles.buttonBorrar} onPress= {this.props.onDelete.bind(this,id)}>
-                 <Text styles={styles.text}>X</Text>
+
+                  
+                 <Pressable style={styles.buttonFav} onPress= {this.props.onFav.bind(this,id)}>
+                    <Text style={{padding: 10, fontWeight: 'bold'}}>
+                        FAV
+                    </Text>
                  </Pressable>
-                 <Pressable style={styles.buttonBorrar} onPress= {this.props.onFav.bind(this,id)}>
-                <Text>
-                    FAV
-                </Text>
+
+                 <Pressable style={styles.buttonBorrar} onPress= {this.props.onDelete.bind(this,id)}>
+                    <Text style={{padding: 10, fontWeight: 'bold'}}>X</Text>
                  </Pressable>
+                 
 
             </View>
 

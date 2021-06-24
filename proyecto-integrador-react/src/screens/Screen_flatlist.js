@@ -13,13 +13,16 @@ import {
   ScrollView,
   TextInput,
   Pressable,
+  StatusBar
 } from 'react-native';
 import { getDataFetch, verMasCards } from '../apiAsync/api';
 import {styles} from '../styles/styles';
 import {Cards} from '../components/Cards';
 import {getDataBorrado, storeDataBorrado,storeDataFav,getDataFav,getDataVerMas} from "../apiAsync/asyncFunction"
 
+//PALETA DE COLORES
 
+// #000000 , #14213d , #fca311 , #e5e5e5 , #ffffff
 
 
 export class Screen_flatlist extends Component{
@@ -167,20 +170,27 @@ export class Screen_flatlist extends Component{
         
                 return(
                     <SafeAreaView style={{flex: 1}}>
-                        <ScrollView style={{flex: 1}}>
+                      <StatusBar
+                      barStyle='dark-content'                      
+                      backgroundColor='#fca311'
+                      />
+                        <ScrollView >
         
                             <View style={styles.navbar}> 
+
                                 <View style={styles.navbarContainer}>
                                     <TouchableOpacity onPress= { () => this.props.navigation.openDrawer()}>
-                                        <View style={styles.navbarButton}>
+                                        {/* <View style={styles.navbarButton}>
                                             <Text>E</Text>
-                                        </View>
+                                        </View> */}
                                     </TouchableOpacity>
                                 </View>
-                                <Text style={styles.navbarDetails}> Dashboard </Text>
+                                <Text style={{color: '#fca311', fontSize: 40, margin: 15, fontWeight: 'bold'}}> Dashboard </Text>
+
                             </View> 
 
-                            <TextInput style={styles.SearchBar} placeholder="Search" onChangeText={text => {this.setState({search: text}); this.filter(text) }} value={search}  />
+
+                            <TextInput style={styles.SearchBar} placeholder="Buscar aqui..." onChangeText={text => {this.setState({search: text}); this.filter(text) }} value={search}  />
 
 
                             <View>
@@ -200,10 +210,17 @@ export class Screen_flatlist extends Component{
                                         
                               {/*Agregamos las cards  */}
           
-                            <TextInput keyboardType="numeric" className = "mas" placeholder="Cuantas tarjetas desea agregar...?" onChangeText= {text => this.setState({agregadas: text})}  />
+                            <TextInput styles={styles.SearchBar} keyboardType="numeric" className = "mas" placeholder="Cuantas tarjetas desea agregar...?" onChangeText= {text => this.setState({agregadas: text})}  />
+
                             <TouchableOpacity  onPress={this.addCards.bind(this)}>
-                            <Text> Agregar</Text>
+                              <Text style={{backgroundColor: 'white', margin: 15, borderRadius: 5, borderStyle: 'solid', borderWidth: 2, width: 80, fontWeight: 'bold', fontSize: 16}}> Agregar</Text>
                             </TouchableOpacity> 
+                            
+        
+        
+        
+        
+                            
                             </View>
         
                         </ScrollView>

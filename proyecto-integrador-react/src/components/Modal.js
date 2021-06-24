@@ -57,14 +57,14 @@ class ComponenteModal extends Component {
                         <Text style= {styles.textModal}> Teléfono: </Text> 
                         {Tel}
                     </Text>
+                                    
+                </View>
 
                 
-                    <TouchableOpacity onPress= {this.props.cerrarModal.bind(this)} style={styles.modalCloseBtn} > 
-                        <Text>Cerrar modal</Text>
-                    </TouchableOpacity>           
-                
-                    
-                </View>
+                    <TouchableOpacity style={styles.btnCerrar} onPress= {this.props.cerrarModal.bind(this)} style={styles.modalCloseBtn} > 
+                            <Text style={{color: 'white', marginTop: 30, fontWeight: 'bold'}}>Cerrar modal</Text>
+                    </TouchableOpacity>  
+
             </View>
         </Modal>         
         )
