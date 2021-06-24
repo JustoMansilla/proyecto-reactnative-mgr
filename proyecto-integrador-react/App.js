@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { getData, getDataFetch } from './src/api/api';
+import { getData, getDataFetch } from './src/apiAsync/api';
 import 'react-native-gesture-handler';
 import {Screen_viewImportedCards} from './src/screens/Screen_viewImportedCards';
 import { Screen_import } from './src/screens/Screen_import';

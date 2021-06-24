@@ -1,5 +1,5 @@
 import React, {Component} from 'react'; 
-import { getDataFetch } from '../api/api';
+import { getDataFetch } from '../apiAsync/api';
 import {
   Text, 
   View, 
