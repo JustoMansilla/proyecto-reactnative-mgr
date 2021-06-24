@@ -31,10 +31,10 @@ export class Screen_flatlist extends Component{
             search: '',
             activity: true,
             contactosOriginal:[],
-            textoBuscar: " ",
-            visible: 6,
+            textoBuscado: " ",
             setItem: [],
-            tarjetasBorradas: []
+            tarjetasBorradas: [],
+            agregadas: " ",
         }
     }
    
@@ -54,7 +54,7 @@ export class Screen_flatlist extends Component{
         
     //Ver mas tarjetas metodo    
     addCards(){
-            verMasCards(this.state.vermas) 
+            verMasCards(this.state.agregadas) 
             .then(resultado => {
               this.setState({contactos: [...this.state.contactos, ...resultado]})
             })
@@ -78,6 +78,30 @@ export class Screen_flatlist extends Component{
             storeDataBorrado(arrayBorrados, '@tarjetaEliminadas')
           }
 
+          //  buscador
+        filter(text){
+          if (text.length > 0) {
+              // var text = target.value
+            const personajes = this.state.contactos
+            const filtrado = personajes.filter((item) =>{
+            const itemData = item.name.first.toUpperCase()
+            const lastName = item.name.last.toUpperCase()
+            const age = item.dob.age.toString()
+            const textData = text.toUpperCase()
+            return (
+            itemData.includes(textData) || lastName.includes(textData) || age.includes(textData)
+                  // comparo name o last name o age con el valor ingresado .
+              )})
+            this.setState({
+                contactos: filtrado,
+                textoBuscado: text,
+            })
+          } else {
+            this.setState({contactos:this.state.personOriginal}) 
+          }
+          console.log(text);
+
+        }
 
         //metodo ver cards
           keyExtractor = (item , idx) =>idx.toString();
@@ -124,6 +148,10 @@ export class Screen_flatlist extends Component{
                                 </View>
                                 <Text style={styles.navbarDetails}> Dashboard </Text>
                             </View> 
+
+                            <TextInput style={styles.SearchBar} placeholder="Search" onChangeText={text => {this.setState({search: text}); this.filter(text) }} value={search}  />
+
+
                             <View>
         
                                        { this.state.activity 
@@ -141,7 +169,7 @@ export class Screen_flatlist extends Component{
                                         
                               {/*Agregamos las cards  */}
           
-                            <TextInput keyboardType="numeric" className = "mas" placeholder="Cuantas tarjetas desea agregar...?" onChangeText= {text => this.setState({vermas: text})}  />
+                            <TextInput keyboardType="numeric" className = "mas" placeholder="Cuantas tarjetas desea agregar...?" onChangeText= {text => this.setState({agregadas: text})}  />
                             <TouchableOpacity  onPress={this.addCards.bind(this)}>
                             <Text> Agregar</Text>
                             </TouchableOpacity> 
