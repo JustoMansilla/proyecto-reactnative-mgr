@@ -20,7 +20,7 @@ class TarjetaBorrada extends Component {
     render(){
      
     //Destructuring de las propiedades de la Card
-    const { img, firstName, lastName,Email,city,State,Street,StreetNum,Tel, Country, Age,  Date,id,key} = this.props;
+    const { img, firstName, lastName,Email,city,State,Street,StreetNum,Tel, Country, Age,  Date,id,key, RegisterDate, Zipcode} = this.props;
 
         return(
             <View style={styles.card}>
@@ -54,9 +54,10 @@ class TarjetaBorrada extends Component {
                    Tel={Tel}
                    Country={Country}
                    Age={Age}
-                //    RegisterDate={RegisterDate} 
+                   RegisterDate={RegisterDate} 
                    Date={Date}
                    id={id}
+                   Zipcode={Zipcode}
                   />
                   <Pressable style={styles.buttonBorrar} onPress= {this.props.onDelete.bind(this,id)}>
                  <Text styles={styles.text}>X</Text>

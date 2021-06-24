@@ -53,7 +53,7 @@ card: {
     margin: 5,
     padding: 5,
     width: "95%",
-    height: 400
+    height: 500
 },
 text: {
     fontSize: 20,
@@ -231,7 +231,23 @@ modalContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
     paddingTop: 250
-
+  },
+  btnCerrar:{
+        width: 40,
+        alignItems: "center",
+        borderWidth: 1,
+        paddingLeft: 10,
+        margin: 5,
+        borderColor: 'black',
+        marginTop: 10,
+        marginBottom: 10,
+        borderWidth: 3,
+        borderRadius: 10,
+        backgroundColor: 'white', 
+  },
+  btnSelec:{
+    margin: 10,
+    color: 'white',
   }
 })
 
