@@ -35,6 +35,9 @@ export class Screen_flatlist extends Component{
             setItem: [],
             tarjetasBorradas: [],
             agregadas: " ",
+            contactoFAV:[],
+            resultado:[],
+
         }
     }
    
@@ -49,6 +52,10 @@ export class Screen_flatlist extends Component{
         .then(resultadoBorrado=> {
           this.setState({tarjetasBorradas : resultadoBorrado })
         })
+        getDataFav("@Favoritos")
+     .then(resultadoFav=> {
+      this.setState({contactoFAV : resultadoFav })
+     })
     }
 
         
@@ -60,6 +67,8 @@ export class Screen_flatlist extends Component{
             })
           }
 
+
+          //empieza metodo borrar
           borrarItem(idx){
             console.log( idx);
             let resultados =this.state.contactos.filter((contactos)=> {
@@ -77,6 +86,27 @@ export class Screen_flatlist extends Component{
             
             storeDataBorrado(arrayBorrados, '@tarjetaEliminadas')
           }
+
+          //Guardar Contacto
+          Save(characteridx){
+            console.log( characteridx);
+            let resultados =this.state.contactos.filter((contactos)=> {
+              //  guardo en var resultados el filtro de person
+              return( characteridx!== contactos.login.uuid )
+              //comparo idx con el uuid
+            })
+            let Favoritos = this.state.contactos.filter((contactos)=> {
+                //   guardo en var borraos el filtro de person  
+              return( characteridx== contactos.login.uuid )
+            })
+            // seteo el estado 
+            let arrayFavs = [...this.state.contactoFAV, ...Favoritos]
+            this.setState({contactos: resultados, contactoFAV: arrayFavs})
+            storeDataFav(arrayFavs, '@Favoritos')  
+          }
+            
+
+
 
           //  buscador
         filter(text){
@@ -113,6 +143,7 @@ export class Screen_flatlist extends Component{
             return (
               <Cards
                   onDelete= {this.borrarItem.bind(this)}
+                  onFav= {this.Save.bind(this)}
                   id= {item.login.uuid}
                   firstName={item.name.first}
                   img={item.picture.large}

@@ -55,19 +55,7 @@ borrarItem(characteridx){
       return(
         
           <SafeAreaView style={styles.container}>
-                 
-          <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }} >
-
-            
-
-            
-
-          </View >
-
-          <View style={styles.container}></View>
-
-           
-          
+                                   
           {
             <FlatList
               style={styles.flat}
@@ -81,23 +69,22 @@ borrarItem(characteridx){
 
             <TarjetaBorrada
             
-                onDelete= {this.borrarItem.bind(this)}
-                id= {item.login.uuid}
-                firstName={item.name.first}
-                img={item.picture.large}
-                lastName={item.name.last}
-                Email={item.email}
-                city={item.location.city}
-                State={item.location.state}
-                Street={item.location.street.name}
-                StreetNumber={item.location.street.number}
-                Telephone= {item.phone}
-                imgMed={item.picture.medium}
-                Country={item.location.country}
-                Postcode={ item.location.postcode}
-                Bithday= {item.dob.age}
-                Date= {item.dob.date}
-                // Registered = {item.registered.date} 
+            onDelete= {this.borrarItem.bind(this)}
+            id= {item.login.uuid}
+            firstName={item.name.first}
+            img={item.picture.large}
+            lastName={item.name.last}
+            Email={item.email}
+            city={item.location.city}
+            Street={item.location.street.name}
+            StreetNum={item.location.street.number}
+            Country={item.location.country}
+            State={item.location.state}
+            Zipcode={ item.location.postcode}
+            Age= {item.dob.age}
+            Date= {item.dob.date}
+            Tel= {item.phone}
+            RegisterDate = {item.registered.date}
                 />
 
                 

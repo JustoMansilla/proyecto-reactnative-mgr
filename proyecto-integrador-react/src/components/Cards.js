@@ -65,6 +65,11 @@ export class Cards extends Component {
                   <Pressable style={styles.buttonBorrar} onPress= {this.props.onDelete.bind(this,id)}>
                  <Text styles={styles.text}>X</Text>
                  </Pressable>
+                 <Pressable style={styles.buttonBorrar} onPress= {this.props.onFav.bind(this,id)}>
+                <Text>
+                    FAV
+                </Text>
+                 </Pressable>
 
             </View>
 

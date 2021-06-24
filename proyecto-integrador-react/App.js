@@ -21,6 +21,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Screen_bin } from './src/screens/Screen_bin';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {AboutUs} from './src/screens/AboutUs';
+import SavedContacts from './src/screens/MisContactos';
 
 
 
@@ -64,6 +65,8 @@ export default class App extends Component {
         <Drawer.Screen name='Screen_bin' component={Screen_bin}></Drawer.Screen>
         <Drawer.Screen name='Screen_import' component={Screen_import}></Drawer.Screen>
         <Drawer.Screen name='About Us' component={AboutUs}></Drawer.Screen>
+        <Drawer.Screen name='Mis Contactos' component={SavedContacts}></Drawer.Screen>
+
 
 
        </Drawer.Navigator>
