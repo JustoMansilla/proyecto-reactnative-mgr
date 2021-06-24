@@ -58,6 +58,7 @@ export class Screen_flatlist extends Component{
 
         //metodo ver cards
           keyExtractor = (item , idx) =>idx.toString();
+          
           renderItem = ({item}) => {
        
             {/*info en el return para simplificar el flatlist (destructuring)  */}
@@ -77,10 +78,11 @@ export class Screen_flatlist extends Component{
                   Zipcode={ item.location.postcode}
                   Age= {item.dob.age}
                   Date= {item.dob.date}
-                  Telephone= {item.phone}
+                  Tel= {item.phone}
                   RegisterDate = {item.registered.date}
               />  )
           }
+
           render(){
             const { search } = this.state;
         

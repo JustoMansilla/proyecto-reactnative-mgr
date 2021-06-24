@@ -81,8 +81,8 @@ modalContainer: {
     },
 
     modal: {
-        width: 100,
-        height:200,
+        width: "80%",
+        height: "80%",
         backgroundColor: 'white',
         borderRadius: 20,
         shadowColor: 'blue',
@@ -92,7 +92,8 @@ modalContainer: {
     },
 
     textModal: {
-        fontSize: 20 
+        fontSize: 17,
+        margin: 5 
     },
 
     closeButton: {
@@ -146,17 +147,6 @@ modalContainer: {
         fontWeight: 'bold',
         alignSelf: 'center'
     },
-    modal: {
-        width: "80%",
-        height: "80%",
-        backgroundColor: "#FEF5E7",
-        alignItems:'center',
-        borderTopRightRadius: 20,
-        borderTopLeftRadius: 20,
-        elevation: 30,
-        shadowColor: '#000000',
-    
-    }, 
     centeredView: {
         flex: 1,
         justifyContent: "center",
