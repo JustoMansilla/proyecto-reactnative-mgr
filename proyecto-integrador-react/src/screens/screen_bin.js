@@ -97,7 +97,8 @@ borrarItem(characteridx){
                 Postcode={ item.location.postcode}
                 Bithday= {item.dob.age}
                 Date= {item.dob.date}
-                Registered = {item.registered.date} />
+                // Registered = {item.registered.date} 
+                />
 
                 
            

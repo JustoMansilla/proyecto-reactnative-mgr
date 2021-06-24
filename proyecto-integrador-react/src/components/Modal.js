@@ -49,10 +49,10 @@ class ComponenteModal extends Component {
                         <Text style={styles.textModal}> Código postal: </Text>
                         {Zipcode}
                     </Text>
-                    <Text style= {styles.textModal}> 
+                    {/* <Text style= {styles.textModal}> 
                         <Text style= {styles.textModal}> Fecha de Registro: </Text>
-                        {RegisterDate.substring(0, 10)}
-                    </Text>
+                        {RegisterDate.substring(0, 10)} */}
+                    {/* </Text> */}
                     <Text style= {styles.textModal}> 
                         <Text style= {styles.textModal}> Teléfono: </Text> 
                         {Tel}

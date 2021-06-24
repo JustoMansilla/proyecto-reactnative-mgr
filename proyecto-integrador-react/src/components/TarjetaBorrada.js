@@ -1,6 +1,6 @@
 import React, {Component} from 'react'; 
 import {
-    View, Image,Text,Pressable, Modal, Button
+    View, Image,Text,Pressable, Modal, Button, TouchableOpacity
 } from 'react-native';
 import {styles} from '../styles/styles';
 import ComponenteModal from './Modal';
@@ -20,7 +20,7 @@ class TarjetaBorrada extends Component {
     render(){
      
     //Destructuring de las propiedades de la Card
-    const { img, firstName, lastName,Email,city,State,Street,StreetNum,Tel, Country, Age, RegisterDate, Date,id,key} = this.props;
+    const { img, firstName, lastName,Email,city,State,Street,StreetNum,Tel, Country, Age,  Date,id,key} = this.props;
 
         return(
             <View style={styles.card}>
@@ -54,7 +54,7 @@ class TarjetaBorrada extends Component {
                    Tel={Tel}
                    Country={Country}
                    Age={Age}
-                   RegisterDate={RegisterDate} 
+                //    RegisterDate={RegisterDate} 
                    Date={Date}
                    id={id}
                   />

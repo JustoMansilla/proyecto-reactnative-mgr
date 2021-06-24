@@ -18,7 +18,6 @@ import {Screen_viewImportedCards} from './src/screens/Screen_viewImportedCards';
 import { Screen_import } from './src/screens/Screen_import';
 import { Screen_flatlist } from './src/screens/Screen_flatlist';
 import { NavigationContainer } from '@react-navigation/native';
-import { startClock } from 'react-native-reanimated';
 import { Screen_bin } from './src/screens/Screen_bin';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {AboutUs} from './src/screens/AboutUs';
