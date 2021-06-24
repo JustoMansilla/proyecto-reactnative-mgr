@@ -62,6 +62,9 @@ export class Cards extends Component {
                    Date={Date}
                    id={id}
                   />
+                  <Pressable style={styles.buttonBorrar} onPress= {this.props.onDelete.bind(this,id)}>
+                 <Text styles={styles.text}>X</Text>
+                 </Pressable>
 
             </View>
 

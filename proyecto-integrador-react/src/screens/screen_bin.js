@@ -1,113 +1,124 @@
-import React, { Component } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import TarjetaBorrada from '../components/TarjetaBorrada';
-import {
-  Text,
-  Image,
-  Button,
-  SafeAreaView,
-  Alert,
-  View,
-  TouchableOpacity,
-  FlatList
-} from 'react-native';
-import {Header} from '../components/Header';
-import {styles} from '../styles/styles';
+import React, {Component} from "react";
+import { View, SafeAreaView ,ScrollView,TextInput, Image,Text,Pressable, Button, FlatList, TouchableOpacity} from 'react-native'
+import { styles } from '../styles/styles'
+import TarjetaBorrada from "../components/TarjetaBorrada";
+import { FontAwesome } from '@expo/vector-icons';
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import {storeDataBorrado, getDataBorrado} from "../apiAsync/asyncFunction"
 
-export class Screen_bin extends Component { 
 
+
+export class Screen_bin extends Component {
+
+  
   constructor(){
-    super();
-    this.state ={
-        tarjetasBorradas: [], 
-    }
-  } 
-
-  async getTarjetaEliminada () {
-    try{
-        const resultado = await AsyncStorage.getItem("Papelera");
-        this.setState({tarjetasBorradas: JSON.parse(resultado)});
-        return resultado;
-    }
-    catch(error){
-        console.log(error)
-    }
-  }
-
-
-
-
-    render () {
-
-      
-
-        return(
-
-       
-
-        <SafeAreaView style={styles.container}>
-                   
-        {/* <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }} >
-          <Pressable   style={styles.buttonAZZA}  onPress={()=> this.Reset("@Borrados")} >
-            <Text> Reset</Text>
-          </Pressable>
-        </View > */}
-
-        {/* <View style={styles.container}></View> */}
-
-         
+      super();
+      this.state = {
         
-        {
-          <FlatList
-          style={styles.container}
-          data={this.state.tarjetasBorradas}
-          keyExtractor={ (item, idx) => idx.toString()}
+          tarjetasBorradas:[],
+          contactos:[],
+          resultado:[],
 
-
-          renderItem={ ({item}) =>
-            (
-
-
-        <TarjetaBorrada onDelete= {this.borrarItem.bind(this)}></TarjetaBorrada>
-
-             )
-
-
-        }
-        
-        />
       }
+  }
+  
+componentDidMount() {
+this._unsubscribe = this.props.navigation.addListener('focus', () => {            
+   getDataBorrado("@tarjetaEliminadas")
+   .then(resultado=> {
+     this.setState({tarjetasBorradas : resultado })
+   });
+});
+}
+componentWillUnmount(){
+this._unsubscribe()
+}
 
-      </SafeAreaView>
-      )
-        
-     }
+
+
+borrarItem(characteridx){
+  console.log( characteridx);
+  let resultados =this.state.tarjetasBorradas.filter((contactos)=> {
+    
+      return( characteridx!== contactos.login.uuid )
+      //comparo idx con el uuid
+  })
+  
+    // seteo de estado
+    this.setState({tarjetasBorradas: resultados})
+    storeDataBorrado(this.state.tarjetasBorradas, "@tarjetaEliminadas")
+
   }
 
-  // const valores = this.state.tarjetasBorradas.map( item =>
-  //       <TarjetaBorrada elemento = {item.login.uuid} elemento = {item}/>)
+  render(){
 
-  //    <SafeAreaView>
-  //         <View> 
+      return(
+        
+          <SafeAreaView style={styles.container}>
+                 
+          <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }} >
 
-  //           <Header/>
-  //         <Text style = {{width:"100%", marginTop: "50%"}}>Papelera</Text>
+            
+
+            
+
+          </View >
+
+          <View style={styles.container}></View>
+
+           
+          
+          {
+            <FlatList
+              style={styles.flat}
+              data={this.state.tarjetasBorradas}
+              keyExtractor={ (item, idx) => idx.toString()}
   
-         
   
-  //         {valores}
+              renderItem={ ({item}) =>
+                (
+
+
+            <TarjetaBorrada
+            
+                onDelete= {this.borrarItem.bind(this)}
+                id= {item.login.uuid}
+                firstName={item.name.first}
+                img={item.picture.large}
+                lastName={item.name.last}
+                Email={item.email}
+                city={item.location.city}
+                State={item.location.state}
+                Street={item.location.street.name}
+                StreetNumber={item.location.street.number}
+                Telephone= {item.phone}
+                imgMed={item.picture.medium}
+                Country={item.location.country}
+                Postcode={ item.location.postcode}
+                Bithday= {item.dob.age}
+                Date= {item.dob.date}
+                Registered = {item.registered.date} />
+
+                
+           
+
+                )
+
+
+            }
+          
+          />
+        }
+
+        </SafeAreaView>
+        
+
+      )
+  };
   
-  //         <TouchableOpacity onPress={this.getTarjetaEliminada.bind(this)}>
-  //           <View>
-  //             <Text>Ver datos borrados</Text>
-  //           </View>
-  //         </TouchableOpacity>
-  
-  //         <TouchableOpacity onPress={ () => this.setState({tarjetasBorradas: [] })}>
-  //           <View>
-  //             <Text>Eliminar</Text>
-  //           </View>
-  //         </TouchableOpacity>
-  //       </View>
-  //       </SafeAreaView>
+};
+
+
+
+
 

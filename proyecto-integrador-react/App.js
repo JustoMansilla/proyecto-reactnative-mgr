@@ -34,6 +34,11 @@ export default class App extends Component {
       }
     };
 
+  
+
+      
+  
+
 //poner navegacion
     render(){
 

@@ -1,3 +1,6 @@
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 export const storeDataBorrado=async (value,key) => {
     try {
       const jsonValue = JSON.stringify(value)

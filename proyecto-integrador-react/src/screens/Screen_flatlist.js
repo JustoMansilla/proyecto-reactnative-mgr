@@ -44,6 +44,11 @@ export class Screen_flatlist extends Component{
         .then(resultado=> {
           this.setState({contactos : resultado, activity:false })
         })
+        //get Borrado
+        getDataBorrado('@tarjetaEliminada')
+        .then(resultadoBorrado=> {
+          this.setState({tarjetasBorradas : resultadoBorrado })
+        })
     }
 
         
@@ -53,6 +58,24 @@ export class Screen_flatlist extends Component{
             .then(resultado => {
               this.setState({contactos: [...this.state.contactos, ...resultado]})
             })
+          }
+
+          borrarItem(idx){
+            console.log( idx);
+            let resultados =this.state.contactos.filter((contactos)=> {
+              //  guardo en var resultados el filtro de person
+              return( idx!== contactos.login.uuid)
+              //comparo idx con el uuid
+            })
+            let Borrado = this.state.contactos.filter((contactos)=> {
+                //   guardo en var borraos el filtro de person  
+              return( idx== contactos.login.uuid )
+            })
+            // seteo el estado 
+            let arrayBorrados = [...this.state.tarjetasBorradas, ...Borrado]
+            this.setState({contactos: resultados, tarjetasBorradas: arrayBorrados})
+            
+            storeDataBorrado(arrayBorrados, '@tarjetaEliminadas')
           }
 
 
@@ -65,6 +88,7 @@ export class Screen_flatlist extends Component{
 
             return (
               <Cards
+                  onDelete= {this.borrarItem.bind(this)}
                   id= {item.login.uuid}
                   firstName={item.name.first}
                   img={item.picture.large}
