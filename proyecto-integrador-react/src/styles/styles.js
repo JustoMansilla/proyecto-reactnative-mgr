@@ -82,7 +82,7 @@ const styles = StyleSheet.create ({
         margin: 20,
         padding: 5,
         width: "85%",
-        height: 250,
+        height: 150,
         marginLeft: 30
             
         },
@@ -95,8 +95,9 @@ const styles = StyleSheet.create ({
         },
 
         textModal: {
-            fontSize: 17,
-            margin: 5 
+            fontSize: 15,
+            margin: 5,
+            fontWeight: 'bold' 
         },
 
         posicionBtnCerrar: {
