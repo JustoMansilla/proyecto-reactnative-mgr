@@ -33,7 +33,7 @@ this._unsubscribe = this.props.navigation.addListener('focus', () => {
 componentWillUnmount(){
 this._unsubscribe()
 }
-      await AsyncStorage.removeItem(key)
+     
 //eliminar item 
 borrarItem(characteridx){
   console.log( characteridx);
