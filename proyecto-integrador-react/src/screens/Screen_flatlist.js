@@ -48,8 +48,11 @@ export class Screen_flatlist extends Component{
         //Fetch api
         getDataFetch()
         .then(resultado=> {
-          this.setState({contactos : resultado, activity:false })
+          this.setState({contactos : resultado, activity:false,
+          contactosOriginal: resultado })
         })
+
+        let contactosOriginal
         //get Borrado
         getDataBorrado('@TarjetasEliminadas')
         .then(resultadoBorrado=> {
@@ -122,7 +125,7 @@ export class Screen_flatlist extends Component{
                 textoBuscado: text,
             })
           } else {
-            this.setState({contactos:this.state.personOriginal}) 
+            this.setState({contactos:this.state.contactosOriginal}) 
           }
           console.log(text);
 
