@@ -36,9 +36,9 @@ class DeleteCard extends Component {
 
                 <Text style={styles.text}>Nacimiento: {Date.substring(0, 10)} ({Age})</Text>
 
-                <TouchableOpacity onPress= {this.openModal} style={styles.closeButton}>
-                    <View >
-                        <Text >Ver más</Text>
+                <TouchableOpacity onPress= {this.openModal} style={styles.posicionBtnCerrar}>
+                    <View style={styles.btnVerMas}>
+                        <Text style={{padding: 10, fontWeight: 'bold'}}>Ver más</Text>
                     </View>                 
                 </TouchableOpacity>
 
@@ -62,9 +62,10 @@ class DeleteCard extends Component {
                    id={id}
                    Zipcode={ZipCode}
                   />
-                  <Pressable style={styles.buttonBorrar} onPress= {this.props.onDelete.bind(this,id)}>
-                 <Text styles={styles.text}>X</Text>
-                 </Pressable>
+
+                <Pressable style={styles.buttonBorrar} onPress= {this.props.onDelete.bind(this,id)}>
+                    <Text style={{padding: 10, fontWeight: 'bold'}}>X</Text>
+                </Pressable>
 
             </View>
         )

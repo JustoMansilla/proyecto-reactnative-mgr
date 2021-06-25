@@ -16,7 +16,7 @@ import { getData, getDataFetch } from './src/apiAsync/api';
 import 'react-native-gesture-handler';
 import { Screen_flatlist } from './src/screens/Screen_flatlist';
 import { NavigationContainer } from '@react-navigation/native';
-import { Screen_bin } from './src/screens/Screen_bin';
+import { Screen_bin } from './src/screens/screen_bin';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {AboutUs} from './src/screens/AboutUs';
 import SavedContacts from './src/screens/MisContactos';

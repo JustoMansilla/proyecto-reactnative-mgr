@@ -295,6 +295,17 @@ const styles = StyleSheet.create ({
       textAbout:{
         fontSize: 15,
         margin: 10,
+      },
+      vaciarPapelera:{
+        backgroundColor: 'white',
+        width: '70%',
+        alignItems: 'center',
+        borderRadius: 10,
+        marginTop: 20,
+        borderStyle: 'solid',
+        borderWidth: 3,
+        marginLeft: '15%'
+
       }
     })
 

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { View, SafeAreaView ,ScrollView,TextInput, Image,Text,Pressable, Button, FlatList, TouchableOpacity} from 'react-native'
+import { View, SafeAreaView ,ScrollView,TextInput, Image,Text,Pressable, Button, FlatList, TouchableOpacity, StatusBar} from 'react-native'
 import { styles } from '../styles/styles'
 import DeleteCard from "../components/TarjetaBorrada";
 import { FontAwesome } from '@expo/vector-icons';
@@ -66,9 +66,20 @@ borrarItem(characteridx){
 
       return(
         
-          <SafeAreaView style={styles.container}>
-            <Pressable   style={styles.modalBtnText}  onPress={()=> this.Reset("@TarjetasEliminadas")} >
-                <Text  > Vaciar papelera</Text>
+        <SafeAreaView style={{flex: 1}}>
+        <StatusBar
+          barStyle='dark-content'                      
+          backgroundColor='#fca311'
+          />
+          <ScrollView >
+          <View style={styles.navbar}> 
+          
+            <Text style={{color: '#fca311', fontSize: 40, margin: 15, fontWeight: 'bold'}}> Papelera </Text>
+
+            </View> 
+
+            <Pressable   style={styles.vaciarPapelera}  onPress={()=> this.Reset("@TarjetasEliminadas")} >
+                <Text  style={{padding: 20, fontWeight: 'bold', fontSize: 16, color: 'black', alignItems: 'center'}}> Apretar para vaciar</Text>
             </Pressable>      
           {
             <FlatList
@@ -111,8 +122,8 @@ borrarItem(characteridx){
           
           />
         }
-
-        </SafeAreaView>
+         </ScrollView>
+          </SafeAreaView>
         
 
       )

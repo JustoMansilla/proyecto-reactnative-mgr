@@ -40,7 +40,7 @@ class TarjetaFavorita extends Component {
                 
 
                 <TouchableOpacity onPress= {this.openModal} style={styles.posicionBtnCerrar}>
-                    <View >
+                    <View style={styles.btnVerMas}>
                         <Text style={{padding: 10, fontWeight: 'bold'}} >Ver más</Text>
                     </View>                 
                 </TouchableOpacity>
@@ -65,9 +65,10 @@ class TarjetaFavorita extends Component {
                    id={id}
                    Zipcode={Zipcode}
                   />
-                  <Pressable style={styles.buttonBorrar} onPress= {this.props.onDelete.bind(this,id)}>
-                 <Text style={{padding: 10, fontWeight: 'bold'}}>X</Text>
-                 </Pressable>
+                  
+                <Pressable style={styles.buttonBorrar} onPress= {this.props.onDelete.bind(this,id)}>
+                    <Text style={{padding: 10, fontWeight: 'bold'}}>X</Text>
+                </Pressable>
 
             </View>
         )

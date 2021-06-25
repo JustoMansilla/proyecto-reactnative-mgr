@@ -82,13 +82,7 @@ class SavedContacts extends Component {
                       />
                 <ScrollView >
                 <View style={styles.navbar}> 
-                  <View style={styles.navbarContainer}>
-                      <TouchableOpacity onPress= { () => this.props.navigation.openDrawer()}>
-                          {/* <View style={styles.navbarButton}>
-                              <Text>E</Text>
-                          </View> */}
-                      </TouchableOpacity>
-                  </View>
+                 
                   <Text style={{color: '#fca311', fontSize: 40, margin: 15, fontWeight: 'bold'}}> My Contacts </Text>
 
                   </View> 
