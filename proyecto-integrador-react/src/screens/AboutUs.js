@@ -36,24 +36,30 @@ export class AboutUs extends Component {
               </View> 
 
             <ScrollView>
-                <View style={styles.container}>
+                <View style={styles.container2}>
 
                 <View style={styles.tarjetaAbout}>
                 <Image style={styles.image} source={{uri: 'https://media.giphy.com/media/izztvFoIOI0Cc/giphy.gif'}}></Image> 
                 <Text style={styles.principalText}> Justo Mansilla </Text>
                 <Text style={styles.secondaryText}>Buenos Aires, Argentina (21)</Text>
+                <Text style={styles.secondaryText}> jmansilla@udesa.edu.ar</Text>
+
                 </View>
 
                 <View style={styles.tarjetaAbout}>
                 <Image style={styles.image} source={{uri: 'https://media.giphy.com/media/134DVXcD94sOWI/giphy.gif'}}></Image> 
                 <Text style={styles.principalText}> Lucas Romero </Text>
                 <Text style={styles.secondaryText}> Buenos Aires, Argentina (21)</Text>
+                <Text style={styles.secondaryText}> lromeropeluffo@udesa.edu.ar</Text>
+
                 </View>
 
                 <View style={styles.tarjetaAbout}>
                 <Image style={styles.image} source={{uri: 'https://media.giphy.com/media/jR02MShfuA0Pw83pZs/giphy.gif'}}></Image> 
                 <Text style={styles.principalText}> Lucas Groszmann</Text>
                 <Text style={styles.secondaryText}> Buenos Aires, Argentina (22)</Text>
+                <Text style={styles.secondaryText}> lgroszmann@udesa.edu.ar</Text>
+
                 </View>
                 </View>
 
