@@ -44,11 +44,8 @@ class SavedContacts extends Component {
   borrarItem(characteridx){
     console.log( characteridx);
     let resultados =this.state.contactoFAV.filter((contactos)=> {
-      //  guardo en var resultados el filtro de personBorrada
       return( characteridx!== contactos.login.uuid )
-      //comparo idx con el uuid
     })
-    // seteo el estado 
     this.setState({contactoFAV: resultados})
     storeDataFav(resultado, "@Favoritos")
 
@@ -59,11 +56,8 @@ class SavedContacts extends Component {
     borrarItem(characteridx){
       console.log( characteridx);
       let resultados =this.state.contactoFAV.filter((contactos)=> {
-        //  guardo en var resultados el filtro de personBorrada
         return( characteridx!== contactos.login.uuid )
-        //comparo idx con el uuid
       })
-      // seteo el estado 
       this.setState({contactoFAV: resultados})
       storeDataFav(this.state.contactoFAV, "@Favoritos")
 
@@ -112,7 +106,7 @@ class SavedContacts extends Component {
                   Age= {item.dob.age}
                   Date= {item.dob.date}
                   Tel= {item.phone}
-                  //RegisterDate = {item.registered.date}
+                  RegisterDate = {item.registered.date}
                   >                
               </TarjetaFavorita>
   

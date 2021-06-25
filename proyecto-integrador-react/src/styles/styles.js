@@ -214,7 +214,7 @@ const styles = StyleSheet.create ({
             backgroundColor: 'white',
             marginHorizontal: 0,
           },
-          SearchBar: {
+          barrasBusq: {
             height: 50,
             width:350,
             margin: 10,

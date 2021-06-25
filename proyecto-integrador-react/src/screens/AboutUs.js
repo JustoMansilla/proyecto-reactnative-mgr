@@ -1,7 +1,5 @@
 import React, {Component} from 'react'; 
 import {styles} from '../styles/styles';
-import {Header} from '../components/Header';
-
 import {
   Text, 
   View, 
@@ -24,13 +22,7 @@ export class AboutUs extends Component {
 
               <View style={styles.navbar}> 
 
-                  <View style={styles.navbarContainer}>
-                      <TouchableOpacity onPress= { () => this.props.navigation.openDrawer()}>
-                          {/* <View style={styles.navbarButton}>
-                              <Text>E</Text>
-                          </View> */}
-                      </TouchableOpacity>
-                  </View>
+                
                   <Text style={{color: '#fca311', fontSize: 40, margin: 15, fontWeight: 'bold'}}> About us </Text>
 
               </View> 
