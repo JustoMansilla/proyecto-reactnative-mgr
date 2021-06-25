@@ -33,21 +33,8 @@ this._unsubscribe = this.props.navigation.addListener('focus', () => {
 componentWillUnmount(){
 this._unsubscribe()
 }
-
-
-async Reset (key){
-  try{
-
       await AsyncStorage.removeItem(key)
-      let resultado = [];
-      getDataBorrado(resultado, "@TarjetasEliminadas")
-
-       this.setState({tarjetasBorradas:  [] })
-      } catch(error){
-      console.log(error);
-    }
-  
-}
+//eliminar item 
 borrarItem(characteridx){
   console.log( characteridx);
   let resultados =this.state.tarjetasBorradas.filter((contactos)=> {
@@ -59,8 +46,19 @@ borrarItem(characteridx){
     storeDataBorrado(this.state.tarjetasBorradas, "@TarjetasEliminadas")
 
   }
+  //eliminado completo
+  async deleteAll (key){
+    try{
   
-  
+        await AsyncStorage.removeItem(key)
+        let resultado = [];
+        getDataBorrado(resultado, "@TarjetasEliminadas")
+        this.setState({tarjetasBorradas:  [] })
+        } catch(error){
+        console.log(error);
+      }
+    
+  }
 
   render(){
 
@@ -78,7 +76,7 @@ borrarItem(characteridx){
 
             </View> 
 
-            <Pressable   style={styles.vaciarPapelera}  onPress={()=> this.Reset("@TarjetasEliminadas")} >
+            <Pressable   style={styles.vaciarPapelera}  onPress={()=> this.deleteAll("@TarjetasEliminadas")} >
                 <Text  style={{padding: 20, fontWeight: 'bold', fontSize: 16, color: 'black', alignItems: 'center'}}> Apretar para vaciar</Text>
             </Pressable>      
           {
@@ -93,8 +91,6 @@ borrarItem(characteridx){
 
 
             <DeleteCard
-            
-            onDelete= {this.borrarItem.bind(this)}
             id= {item.login.uuid}
             firstName={item.name.first}
             img={item.picture.large}

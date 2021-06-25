@@ -98,7 +98,7 @@ export class Screen_flatlist extends Component{
               return( characteridx!== contactos.login.uuid )
             })
             let Favoritos = this.state.contactos.filter((contactos)=> {
-              return( characteridx== contactos.login.uuid )
+              return( characteridx == contactos.login.uuid )
             })
             let arrayFavs = [...this.state.contactoFAV, ...Favoritos]
             this.setState({contactos: resultados, contactoFAV: arrayFavs})

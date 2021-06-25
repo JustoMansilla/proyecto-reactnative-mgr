@@ -63,9 +63,7 @@ class DeleteCard extends Component {
                    Zipcode={ZipCode}
                   />
 
-                <Pressable style={styles.buttonBorrar} onPress= {this.props.onDelete.bind(this,id)}>
-                    <Text style={{padding: 10, fontWeight: 'bold'}}>X</Text>
-                </Pressable>
+                
 
             </View>
         )

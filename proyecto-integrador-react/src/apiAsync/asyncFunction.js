@@ -1,6 +1,7 @@
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+//data borrado
 export const storeDataBorrado=async (value,key) => {
     try {
       const jsonValue = JSON.stringify(value)
@@ -18,7 +19,7 @@ export const getDataBorrado=async (key)=>{
     }
     }    
 
-
+//data fav
 export const storeDataFav=async (value,key) => {
       try {
         const jsonValue = JSON.stringify(value)
@@ -38,7 +39,7 @@ export const getDataFav=async (key)=>{
         }
 
 
-
+//data mas
 export const getDataVerMas=async (key)=>{
         try {
           const jsonValue = await AsyncStorage.getItem(key)
