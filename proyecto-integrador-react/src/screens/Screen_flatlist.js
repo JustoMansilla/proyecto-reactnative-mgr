@@ -51,7 +51,7 @@ export class Screen_flatlist extends Component{
           this.setState({contactos : resultado, activity:false })
         })
         //get Borrado
-        getDataBorrado('@tarjetaEliminada')
+        getDataBorrado('@TarjetasEliminadas')
         .then(resultadoBorrado=> {
           this.setState({tarjetasBorradas : resultadoBorrado })
         })
@@ -87,7 +87,7 @@ export class Screen_flatlist extends Component{
             let arrayBorrados = [...this.state.tarjetasBorradas, ...Borrado]
             this.setState({contactos: resultados, tarjetasBorradas: arrayBorrados})
             
-            storeDataBorrado(arrayBorrados, '@tarjetaEliminadas')
+            storeDataBorrado(arrayBorrados, '@TarjetasEliminadas')
           }
 
           //Guardar Contacto

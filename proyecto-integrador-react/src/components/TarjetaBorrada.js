@@ -4,6 +4,10 @@ import {
 } from 'react-native';
 import {styles} from '../styles/styles';
 import ComponenteModal from './Modal';
+import {storeDataBorrado, getDataBorrado} from "../apiAsync/asyncFunction"
+import AsyncStorage from '@react-native-async-storage/async-storage'
+
+
 
 class DeleteCard extends Component {
     constructor(){
@@ -16,7 +20,6 @@ class DeleteCard extends Component {
 
     openModal =  ()=> this.setState({showModal: true});
     closeModal =  ()=> this.setState({showModal: false});
-      
     render(){
      
     //Destructuring de las propiedades de la Card

@@ -24,7 +24,7 @@ export class Screen_bin extends Component {
   
 componentDidMount() {
 this._unsubscribe = this.props.navigation.addListener('focus', () => {            
-   getDataBorrado("@tarjetaEliminadas")
+   getDataBorrado("@TarjetasEliminadas")
    .then(resultado=> {
      this.setState({tarjetasBorradas : resultado })
    });
@@ -35,7 +35,19 @@ this._unsubscribe()
 }
 
 
+async Reset (key){
+  try{
 
+      await AsyncStorage.removeItem(key)
+      let resultado = [];
+      getDataBorrado(resultado, "@TarjetasEliminadas")
+
+       this.setState({tarjetasBorradas:  [] })
+      } catch(error){
+      console.log(error);
+    }
+  
+}
 borrarItem(characteridx){
   console.log( characteridx);
   let resultados =this.state.tarjetasBorradas.filter((contactos)=> {
@@ -46,16 +58,21 @@ borrarItem(characteridx){
   
     // seteo de estado
     this.setState({tarjetasBorradas: resultados})
-    storeDataBorrado(this.state.tarjetasBorradas, "@tarjetaEliminadas")
+    storeDataBorrado(this.state.tarjetasBorradas, "@TarjetasEliminadas")
 
   }
+  
+  
 
   render(){
 
       return(
         
           <SafeAreaView style={styles.container}>
-            <Text>hola</Text>                 
+            <Text>hola</Text>           
+            <Pressable   style={styles.modalBtnText}  onPress={()=> this.Reset("@TarjetasEliminadas")} >
+                <Text  > Vaciar papelera</Text>
+            </Pressable>      
           {
             <FlatList
               style={styles.flat}
