@@ -194,10 +194,12 @@ const styles = StyleSheet.create ({
           tarjetaAbout: {
             backgroundColor: '#ffffff',
             borderRadius: 10,
-            width: 200,
-            height: 180,
-            margin: 10,
+            width: 250,
+            height: 280,
+            margin: 20,
             position: 'relative',
+            borderStyle: 'solid',
+            borderWidth: 2
           },
           image: {
             width: 120,
@@ -289,6 +291,10 @@ const styles = StyleSheet.create ({
         width: '16%',
         borderStyle: 'solid',
         borderWidth: 1
+      },
+      textAbout:{
+        fontSize: 15,
+        margin: 10,
       }
     })
 
