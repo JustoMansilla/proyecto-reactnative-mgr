@@ -65,7 +65,7 @@ class SavedContacts extends Component {
       })
       // seteo el estado 
       this.setState({contactoFAV: resultados})
-      storeDataFav(this.state.contactoFAV, "@contactoFAV")
+      storeDataFav(this.state.contactoFAV, "@Favoritos")
 
       }
          
