@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { View, SafeAreaView ,ScrollView,TextInput, Image,Text,Pressable, Button, FlatList, TouchableOpacity} from 'react-native'
 import { styles } from '../styles/styles'
-import TarjetaBorrada from "../components/TarjetaBorrada";
+import DeleteCard from "../components/TarjetaBorrada";
 import { FontAwesome } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import {storeDataBorrado, getDataBorrado} from "../apiAsync/asyncFunction"
@@ -55,7 +55,7 @@ borrarItem(characteridx){
       return(
         
           <SafeAreaView style={styles.container}>
-                                   
+            <Text>hola</Text>                 
           {
             <FlatList
               style={styles.flat}
@@ -67,7 +67,7 @@ borrarItem(characteridx){
                 (
 
 
-            <TarjetaBorrada
+            <DeleteCard
             
             onDelete= {this.borrarItem.bind(this)}
             id= {item.login.uuid}

@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { View, SafeAreaView, FlatList ,ScrollView,TextInput, Image,Text,Pressable, Button} from 'react-native'
 import { styles } from '../styles/styles'
-import CardFav from "../components/CardFav";
+import TarjetaFavorita from "../components/CardFav";
 import { NavigationContainer } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import {getDataFav,storeDataFav} from "../apiAsync/asyncFunction"
@@ -76,6 +76,8 @@ class SavedContacts extends Component {
         return(
           
             <SafeAreaView style={styles.container}>
+
+              
               {
                 <FlatList
                 style={styles.flat}
@@ -86,7 +88,7 @@ class SavedContacts extends Component {
                 renderItem={ ({item}) =>
                   (
 
-              <CardFav
+              <TarjetaFavorita
               onDelete= {this.borrarItem.bind(this)}
                   id= {item.login.uuid}
                   firstName={item.name.first}
@@ -104,7 +106,7 @@ class SavedContacts extends Component {
                   Tel= {item.phone}
                   //RegisterDate = {item.registered.date}
                   >                
-              </CardFav>
+              </TarjetaFavorita>
   
                    )
   

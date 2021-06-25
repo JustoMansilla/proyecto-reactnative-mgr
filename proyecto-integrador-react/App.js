@@ -14,8 +14,6 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getData, getDataFetch } from './src/apiAsync/api';
 import 'react-native-gesture-handler';
-import {Screen_viewImportedCards} from './src/screens/Screen_viewImportedCards';
-import { Screen_import } from './src/screens/Screen_import';
 import { Screen_flatlist } from './src/screens/Screen_flatlist';
 import { NavigationContainer } from '@react-navigation/native';
 import { Screen_bin } from './src/screens/Screen_bin';
@@ -68,9 +66,7 @@ export default class App extends Component {
         <Drawer.Screen name='Mis Contactos' component={SavedContacts}></Drawer.Screen>
         <Drawer.Screen name='About Us' component={AboutUs}></Drawer.Screen>
 
-        {/* <Drawer.Screen name='Screen_viewImportedCards' component={Screen_viewImportedCards}></Drawer.Screen>
-        <Drawer.Screen name='Screen_import' component={Screen_import}></Drawer.Screen>
-        */}
+       
 
 
 

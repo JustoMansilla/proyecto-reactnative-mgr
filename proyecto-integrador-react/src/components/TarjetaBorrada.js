@@ -5,7 +5,7 @@ import {
 import {styles} from '../styles/styles';
 import ComponenteModal from './Modal';
 
-class TarjetaBorrada extends Component {
+class DeleteCard extends Component {
     constructor(){
         super();
         this.state = {
@@ -68,4 +68,4 @@ class TarjetaBorrada extends Component {
     }
 }
 
-export default TarjetaBorrada;
+export default DeleteCard;
