@@ -53,10 +53,8 @@ borrarItem(characteridx){
   let resultados =this.state.tarjetasBorradas.filter((contactos)=> {
     
       return( characteridx!== contactos.login.uuid )
-      //comparo idx con el uuid
   })
   
-    // seteo de estado
     this.setState({tarjetasBorradas: resultados})
     storeDataBorrado(this.state.tarjetasBorradas, "@TarjetasEliminadas")
 
@@ -69,7 +67,6 @@ borrarItem(characteridx){
       return(
         
           <SafeAreaView style={styles.container}>
-            <Text>hola</Text>           
             <Pressable   style={styles.modalBtnText}  onPress={()=> this.Reset("@TarjetasEliminadas")} >
                 <Text  > Vaciar papelera</Text>
             </Pressable>      

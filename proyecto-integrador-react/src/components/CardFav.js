@@ -27,15 +27,21 @@ class TarjetaFavorita extends Component {
 
                 <Image style={styles.image} source={{uri: img}}/>
                 
-                <Text style={styles.text}>Nombre completo: {firstName} {lastName}</Text> 
+                <View style={styles.contenedorCard}>
 
-                <Text style={styles.text}>E-mail: {Email}</Text>
+                <Text style={styles.textContenedorCard}>Nombre completo: {firstName} {lastName}</Text> 
 
-                <Text style={styles.text}>Nacimiento: {Date.substring(0, 10)} ({Age})</Text>
+                <Text style={styles.textContenedorCard}>E-mail: {Email}</Text>
 
-                <TouchableOpacity onPress= {this.openModal} style={styles.closeButton}>
+                <Text style={styles.textContenedorCard}>Nacimiento: {Date.substring(0, 10)} ({Age})</Text>
+
+                </View>
+
+                
+
+                <TouchableOpacity onPress= {this.openModal} style={styles.posicionBtnCerrar}>
                     <View >
-                        <Text >Ver más</Text>
+                        <Text style={{padding: 10, fontWeight: 'bold'}} >Ver más</Text>
                     </View>                 
                 </TouchableOpacity>
 
@@ -60,7 +66,7 @@ class TarjetaFavorita extends Component {
                    Zipcode={Zipcode}
                   />
                   <Pressable style={styles.buttonBorrar} onPress= {this.props.onDelete.bind(this,id)}>
-                 <Text styles={styles.text}>X</Text>
+                 <Text style={{padding: 10, fontWeight: 'bold'}}>X</Text>
                  </Pressable>
 
             </View>

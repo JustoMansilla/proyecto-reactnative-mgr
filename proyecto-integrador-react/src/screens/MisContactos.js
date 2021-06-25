@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { View, SafeAreaView, FlatList ,ScrollView,TextInput, Image,Text,Pressable, Button} from 'react-native'
+import { View, SafeAreaView, FlatList ,ScrollView,TextInput, Image,Text,Pressable, Button,StatusBar, TouchableOpacity} from 'react-native'
 import { styles } from '../styles/styles'
 import TarjetaFavorita from "../components/CardFav";
 import { NavigationContainer } from '@react-navigation/native';
@@ -75,9 +75,23 @@ class SavedContacts extends Component {
 
         return(
           
-            <SafeAreaView style={styles.container}>
+          <SafeAreaView style={{flex: 1}}>
+                    <StatusBar
+                      barStyle='dark-content'                      
+                      backgroundColor='#fca311'
+                      />
+                <ScrollView >
+                <View style={styles.navbar}> 
+                  <View style={styles.navbarContainer}>
+                      <TouchableOpacity onPress= { () => this.props.navigation.openDrawer()}>
+                          {/* <View style={styles.navbarButton}>
+                              <Text>E</Text>
+                          </View> */}
+                      </TouchableOpacity>
+                  </View>
+                  <Text style={{color: '#fca311', fontSize: 40, margin: 15, fontWeight: 'bold'}}> My Contacts </Text>
 
-              
+                  </View> 
               {
                 <FlatList
                 style={styles.flat}
@@ -115,6 +129,9 @@ class SavedContacts extends Component {
               
               />
               }
+ 
+ 
+            </ScrollView>
           </SafeAreaView>
           
 
