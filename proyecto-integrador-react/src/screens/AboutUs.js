@@ -8,39 +8,59 @@ import {
   TouchableOpacity,
   ScrollView,
   Image,
+  SafeAreaView,
+  StatusBar
 } from 'react-native';
 
 export class AboutUs extends Component { 
   render () {
       return(
-        <View style={styles.container}> 
-            <Header
-            openDrawer = {this.props.navigation.openDrawer}
-            />
-            <View style={styles.container}>
+        <SafeAreaView style={{flex: 1}}>
+        <StatusBar
+        barStyle='dark-content'                      
+        backgroundColor='#fca311'
+        />
+          <ScrollView >
+
+              <View style={styles.navbar}> 
+
+                  <View style={styles.navbarContainer}>
+                      <TouchableOpacity onPress= { () => this.props.navigation.openDrawer()}>
+                          {/* <View style={styles.navbarButton}>
+                              <Text>E</Text>
+                          </View> */}
+                      </TouchableOpacity>
+                  </View>
+                  <Text style={{color: '#fca311', fontSize: 40, margin: 15, fontWeight: 'bold'}}> About us </Text>
+
+              </View> 
 
             <ScrollView>
+                <View style={styles.container}>
+
                 <View style={styles.tarjetaAbout}>
-                <Image style={styles.image} source={{uri: 'https://freepikpsd.com/media/2019/10/people-png-silhouette-walking-4-Transparent-Images.png'}}></Image> 
+                <Image style={styles.image} source={{uri: 'https://media.giphy.com/media/izztvFoIOI0Cc/giphy.gif'}}></Image> 
                 <Text style={styles.principalText}> Justo Mansilla </Text>
                 <Text style={styles.secondaryText}>Buenos Aires, Argentina (21)</Text>
                 </View>
 
                 <View style={styles.tarjetaAbout}>
-                <Image style={styles.image} source={{uri: 'https://freepikpsd.com/media/2019/10/people-png-silhouette-walking-4-Transparent-Images.png'}}></Image> 
+                <Image style={styles.image} source={{uri: 'https://media.giphy.com/media/134DVXcD94sOWI/giphy.gif'}}></Image> 
                 <Text style={styles.principalText}> Lucas Romero </Text>
                 <Text style={styles.secondaryText}> Buenos Aires, Argentina (21)</Text>
                 </View>
 
                 <View style={styles.tarjetaAbout}>
-                <Image style={styles.image} source={{uri: 'https://freepikpsd.com/media/2019/10/people-png-silhouette-walking-4-Transparent-Images.png'}}></Image> 
+                <Image style={styles.image} source={{uri: 'https://media.giphy.com/media/jR02MShfuA0Pw83pZs/giphy.gif'}}></Image> 
                 <Text style={styles.principalText}> Lucas Groszmann</Text>
                 <Text style={styles.secondaryText}> Buenos Aires, Argentina (22)</Text>
                 </View>
+                </View>
+
             </ScrollView>
 
-            </View>
-        </View>
+            </ScrollView>
+          </SafeAreaView>
 
       )
    }

@@ -206,9 +206,8 @@ const styles = StyleSheet.create ({
             alignSelf: 'center',
             margin: 10,
             borderRadius: 10,
-            borderStyle: 'solid',
             borderWidth: 2,
-        },
+          },
         scrollView: {
             backgroundColor: 'white',
             marginHorizontal: 0,
