@@ -306,7 +306,21 @@ const styles = StyleSheet.create ({
         borderWidth: 3,
         marginLeft: '15%'
 
-      }
+      },
+      principalText: {
+        fontSize: 22,
+        color: '#000000',
+        justifyContent: 'center',
+        alignSelf: 'center',
+        padding: 5,
+        fontWeight: 'bold',
+    },
+    secondaryText: {
+    fontSize: 14,
+    padding: 5,
+    justifyContent: 'center',
+    alignSelf: 'center',
+}, 
     })
 
 
